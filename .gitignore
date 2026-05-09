@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Env
+.env
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pytest
+.pytest_cache/
+htmlcov/
+.coverage
+
+# GeoScope Analyst
+backend/.env
+backend/.venv/
+backend/data/cache/
+backend/data/*.json
+*.log
+
+# Python cache
+**/__pycache__/
+**/*.pyc
+
+# Local runtime
+*.sqlite
+*.db
