@@ -1,4 +1,5 @@
 # GeoScope Analyst — v0.2.0
+[![Tests](https://github.com/farkh2023-art/geoscope-analyst/actions/workflows/tests.yml/badge.svg)](https://github.com/farkh2023-art/geoscope-analyst/actions/workflows/tests.yml)
 
 Super agent géospatial — analyse territoriale publique avec **carte interactive Leaflet.js**.
 
