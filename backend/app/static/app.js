@@ -161,19 +161,18 @@ function renderMap(location, infrastructures, radius_m) {
     }
     catCounts[cat]++;
 
-    const seed = infra.name.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
-    const dLat = ((seed % 17) - 8) * 0.0008;
-    const dLon = ((seed % 13) - 6) * 0.0010;
+    if (infra.lat == null || infra.lon == null) return; // position non cartographiée
 
     const tags = Object.entries(infra.osm_tags || {})
       .map(([k, v]) => `<span style="opacity:.7">${k}</span>: ${v}`).join('<br>');
+    const distance = infra.distance_m != null ? `${infra.distance_m} m` : 'distance inconnue';
 
-    L.circleMarker([lat + dLat, lon + dLon], {
+    L.circleMarker([infra.lat, infra.lon], {
       radius: 6, fillColor: color, color: '#fff', weight: 1.5, fillOpacity: 0.9,
     })
       .bindPopup(`
         <strong>${infra.name}</strong><br>
-        <span style="color:${color};font-weight:600">${cat}</span> · ${infra.type}<br>
+        <span style="color:${color};font-weight:600">${cat}</span> · ${infra.type} · ${distance}<br>
         ${tags ? `<br><small>${tags}</small>` : ''}
         <br><small style="opacity:.6">Source : ${infra.source}</small>
       `, { maxWidth: 220 })
@@ -342,21 +341,46 @@ function renderInfrastructures(infras) {
   filterBar.classList.remove('hidden');
   document.getElementById('infraFilter').value = '';
 
+  content.innerHTML = `
+    <table class="infra-table">
+      <thead><tr>
+        <th>Nom</th><th>Type OSM</th><th>Catégorie</th>
+        <th class="sortable" onclick="sortInfraTable()">Distance ⇅</th>
+        <th>Source</th>
+      </tr></thead>
+      <tbody id="infraTbody"></tbody>
+    </table>`;
+
+  _currentInfras = infras.slice();
+  _renderInfraRows(_currentInfras);
+}
+
+let _currentInfras = [];
+let _infraSortAsc  = true;
+
+function _renderInfraRows(infras) {
   const rows = infras.map(i => {
-    const color = CAT_COLORS[i.category] || CAT_COLORS.autre;
+    const color    = CAT_COLORS[i.category] || CAT_COLORS.autre;
+    const distance = i.distance_m != null ? `${i.distance_m} m` : 'position non cartographiée';
     return `<tr>
       <td>${i.name}</td>
       <td>${i.type}</td>
       <td><span class="cat-badge" style="color:${color};border-color:${color}">${i.category}</span></td>
+      <td>${distance}</td>
       <td>${i.source}</td>
     </tr>`;
   }).join('');
+  document.getElementById('infraTbody').innerHTML = rows;
+}
 
-  content.innerHTML = `
-    <table class="infra-table">
-      <thead><tr><th>Nom</th><th>Type OSM</th><th>Catégorie</th><th>Source</th></tr></thead>
-      <tbody id="infraTbody">${rows}</tbody>
-    </table>`;
+function sortInfraTable() {
+  _infraSortAsc = !_infraSortAsc;
+  const sorted = _currentInfras.slice().sort((a, b) => {
+    const da = a.distance_m ?? Infinity;
+    const db = b.distance_m ?? Infinity;
+    return _infraSortAsc ? da - db : db - da;
+  });
+  _renderInfraRows(sorted);
 }
 
 function filterInfraTable() {
@@ -459,16 +483,13 @@ function exportGeoJSON() {
   }
 
   lastResponse.infrastructures.forEach(infra => {
-    if (!loc.coordinates) return;
-    const seed = infra.name.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
-    const dLat = ((seed % 17) - 8) * 0.0008;
-    const dLon = ((seed % 13) - 6) * 0.0010;
+    if (infra.lat == null || infra.lon == null) return;
     features.push({
       type: 'Feature',
-      geometry: { type: 'Point', coordinates: [loc.coordinates.lon + dLon, loc.coordinates.lat + dLat] },
+      geometry: { type: 'Point', coordinates: [infra.lon, infra.lat] },
       properties: {
         name: infra.name, type: infra.type, category: infra.category,
-        source: infra.source, osm_tags: infra.osm_tags,
+        source: infra.source, osm_tags: infra.osm_tags, distance_m: infra.distance_m,
       },
     });
   });

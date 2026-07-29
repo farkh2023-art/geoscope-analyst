@@ -53,6 +53,9 @@ class Infrastructure(BaseModel):
     category: str
     osm_tags: dict[str, str] = {}
     source: str = "OpenStreetMap"
+    lat: float | None = None
+    lon: float | None = None
+    distance_m: int | None = None
 
 
 class ReportSection(BaseModel):

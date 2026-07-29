@@ -127,24 +127,19 @@ async def map_data(req: AnalyzeRequest):
                 "country": location.country,
             },
         })
-    for i, infra in enumerate(infrastructures):
-        if location.coordinates:
-            seed = sum(ord(c) for c in infra.name)
-            dlat = ((seed % 17) - 8) * 0.0008
-            dlon = ((seed % 13) - 6) * 0.0010
-            lat  = location.coordinates.lat + dlat
-            lon  = location.coordinates.lon + dlon
-        else:
+    for infra in infrastructures:
+        if infra.lat is None or infra.lon is None:
             continue
         features.append({
             "type": "Feature",
-            "geometry": {"type": "Point", "coordinates": [lon, lat]},
+            "geometry": {"type": "Point", "coordinates": [infra.lon, infra.lat]},
             "properties": {
                 "name": infra.name,
                 "type": infra.type,
                 "category": infra.category,
                 "source": infra.source,
                 "marker_type": "infrastructure",
+                "distance_m": infra.distance_m,
             },
         })
 

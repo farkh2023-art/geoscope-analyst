@@ -40,7 +40,7 @@ def generate_report(
             "rayon_analyse_m": radius_m,
         },
         "description_zone": _describe_zone(zone_type, present_categories),
-        "infrastructures": {cat: [i.name for i in items] for cat, items in grouped.items() if items},
+        "infrastructures": {cat: [_format_infra(i) for i in items] for cat, items in grouped.items() if items},
         "niveau_confiance": {
             "score": confidence.score,
             "label": confidence.label,
@@ -60,6 +60,12 @@ def generate_report(
         report["contexte_territorial"] = _territorial_context(location, zone_type)
 
     return report
+
+
+def _format_infra(infra: Infrastructure) -> str:
+    if infra.distance_m is not None:
+        return f"{infra.name} — {infra.distance_m} m"
+    return f"{infra.name} — position non cartographiée"
 
 
 def _build_summary(loc: LocationResult, conf: ConfidenceResult, zone_type: str, n_infra: int) -> str:

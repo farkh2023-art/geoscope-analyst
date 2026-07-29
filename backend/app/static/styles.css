@@ -318,6 +318,8 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 .infra-table td { padding: 0.55rem 0.8rem; border-bottom: 1px solid #2a2f45; }
 .infra-table tr:last-child td { border-bottom: none; }
 .infra-table tr:hover td { background: var(--surface2); }
+.infra-table th.sortable { cursor: pointer; user-select: none; }
+.infra-table th.sortable:hover { color: var(--text); }
 .cat-badge {
   font-size: 0.75rem;
   padding: 0.2rem 0.6rem;
