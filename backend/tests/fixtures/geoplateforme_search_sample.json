@@ -1,0 +1,36 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.345141,
+          48.854843
+        ]
+      },
+      "properties": {
+        "label": "8 Boulevard du Palais 75001 Paris",
+        "score": 0.9559854545454546,
+        "housenumber": "8",
+        "id": "75101_7006_00008",
+        "banId": "b2fabd26-ef7c-41d4-8007-19a1ecca6f62",
+        "name": "8 Boulevard du Palais",
+        "postcode": "75001",
+        "citycode": "75101",
+        "x": 651949.47,
+        "y": 6861844.17,
+        "city": "Paris",
+        "district": "Paris 1er Arrondissement",
+        "context": "75, Paris, Île-de-France",
+        "type": "housenumber",
+        "importance": 0.51584,
+        "depcode": "75",
+        "street": "Boulevard du Palais",
+        "_type": "address"
+      }
+    }
+  ],
+  "query": "8 boulevard du palais paris"
+}

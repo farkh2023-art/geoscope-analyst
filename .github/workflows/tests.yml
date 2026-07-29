@@ -23,4 +23,7 @@ jobs:
 
       - name: Run tests
         working-directory: backend
+        env:
+          OFFLINE_MODE: "true"
+          GEOCODER: "mock"
         run: pytest

@@ -50,6 +50,8 @@ class LocationResult(BaseModel):
     neighborhood: str = ""
     display_name: str = ""
     input_type: InputType = InputType.unknown
+    postcode: str = ""
+    citycode: str = ""  # code INSEE (BAN) — nécessaire pour un futur croisement avec des données INSEE
 
 
 class ConfidenceResult(BaseModel):

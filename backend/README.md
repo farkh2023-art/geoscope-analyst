@@ -31,6 +31,7 @@ pytest -v
 backend/
 ├── app/
 │   ├── main.py              # FastAPI app + routes
+│   ├── version.py           # Source de vérité unique pour la version
 │   ├── core/
 │   │   ├── config.py        # Settings (.env)
 │   │   └── safety.py        # Garde-fous
@@ -39,11 +40,14 @@ backend/
 │   ├── services/
 │   │   ├── input_detector.py
 │   │   ├── coordinate_parser.py
-│   │   ├── nominatim_client.py
+│   │   ├── geocoding/        # Geocoder : geoplateforme / nominatim / mock (factory.py)
 │   │   ├── overpass_client.py
 │   │   ├── infrastructure_classifier.py
+│   │   ├── role_classifier.py
 │   │   ├── confidence_scoring.py
 │   │   ├── report_generator.py
+│   │   ├── http_resilience.py   # Rate limiter + retry HTTP 429
+│   │   ├── ttl_cache.py
 │   │   └── markdown_exporter.py
 │   └── static/              # Interface web
 ├── tests/

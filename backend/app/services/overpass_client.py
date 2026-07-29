@@ -4,9 +4,14 @@ import httpx
 from app.core.config import settings
 from app.models.schemas import Activity, Coordinates, Infrastructure
 from app.services.geo_utils import haversine_m
+from app.services.http_resilience import RateLimiter, request_with_retry
 from app.services.role_classifier import infer_role
+from app.services.ttl_cache import TTLCache
 
 logger = logging.getLogger(__name__)
+
+_limiter = RateLimiter(settings.rate_limit_per_second)
+_cache = TTLCache(settings.cache_ttl_seconds)
 
 # Coordonnées réelles vérifiées via Nominatim/Overpass, toutes à moins de 1 500 m
 # du centre mock (48.8566, 2.3522 — Hôtel de Ville / Île de la Cité, Paris).
@@ -68,18 +73,26 @@ async def fetch_infrastructures(
     if settings.offline_mode:
         candidates = list(_MOCK_INFRASTRUCTURES)
     else:
-        query = _OVERPASS_QUERY_TEMPLATE.format(
-            radius=radius_m, lat=coords.lat, lon=coords.lon
-        )
-        headers = {"User-Agent": settings.nominatim_user_agent, "Accept": "*/*"}
-        try:
-            async with httpx.AsyncClient(timeout=settings.request_timeout_seconds, headers=headers) as client:
-                resp = await client.post(settings.overpass_base_url, data={"data": query})
-                resp.raise_for_status()
-                data = resp.json()
-            candidates = _parse_elements(data.get("elements", []))
-        except (httpx.TimeoutException, httpx.HTTPStatusError, httpx.RequestError):
-            return []
+        cache_key = (round(coords.lat, 5), round(coords.lon, 5), radius_m)
+        cached = _cache.get(cache_key)
+        if cached is not None:
+            candidates = cached
+        else:
+            query = _OVERPASS_QUERY_TEMPLATE.format(
+                radius=radius_m, lat=coords.lat, lon=coords.lon
+            )
+            headers = {"User-Agent": settings.nominatim_user_agent, "Accept": "*/*"}
+            try:
+                async with httpx.AsyncClient(timeout=settings.request_timeout_seconds, headers=headers) as client:
+                    resp = await request_with_retry(
+                        client, "POST", settings.overpass_base_url,
+                        limiter=_limiter, data={"data": query}, headers=headers,
+                    )
+                    data = resp.json()
+                candidates = _parse_elements(data.get("elements", []))
+                _cache.set(cache_key, candidates)
+            except (httpx.TimeoutException, httpx.HTTPStatusError, httpx.RequestError):
+                return []
 
     return _finalize(candidates, coords, radius_m, activity)
 

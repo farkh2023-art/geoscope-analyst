@@ -7,7 +7,7 @@ import pytest
 from unittest.mock import patch
 
 from app.models.schemas import Coordinates
-from app.services.nominatim_client import reverse_geocode
+from app.services.geocoding.nominatim import NominatimGeocoder
 from app.services.overpass_client import fetch_infrastructures
 
 
@@ -15,40 +15,17 @@ from app.services.overpass_client import fetch_infrastructures
 
 class _MockNominatimResponse:
     """Réponse HTTP minimale simulant Nominatim."""
+    status_code = 200
     def raise_for_status(self): pass
     def json(self): return {"address": {}, "display_name": "Lieu simulé"}
 
 
-class _MockOverpassResponse:
-    """Réponse HTTP minimale simulant Overpass."""
-    def raise_for_status(self): pass
-    def json(self): return {"elements": []}
-
-
-def _mock_client_get(response):
-    """Retourne un context-manager async dont .get() retourne `response`."""
-    class _Client:
-        async def __aenter__(self): return self
-        async def __aexit__(self, *_): pass
-        async def get(self, *args, **kwargs): return response
-    return _Client()
-
-
-def _mock_client_post(response):
-    """Retourne un context-manager async dont .post() retourne `response`."""
-    class _Client:
-        async def __aenter__(self): return self
-        async def __aexit__(self, *_): pass
-        async def post(self, *args, **kwargs): return response
-    return _Client()
-
-
 def _timeout_client_post():
-    """Simule un client Overpass qui lève TimeoutException sur .post()."""
+    """Simule un client Overpass qui lève TimeoutException sur .request()."""
     class _Client:
         async def __aenter__(self): return self
         async def __aexit__(self, *_): pass
-        async def post(self, *args, **kwargs):
+        async def request(self, method, url, **kwargs):
             raise httpx.TimeoutException("Timeout simulé")
     return _Client()
 
@@ -86,20 +63,21 @@ async def test_user_agent_header_is_sent():
     class _CapturingClient:
         async def __aenter__(self): return self
         async def __aexit__(self, *_): pass
-        async def get(self, url, params=None, headers=None):
+        async def request(self, method, url, params=None, headers=None, **kwargs):
             captured["headers"] = headers or {}
             return _MockNominatimResponse()
 
+    geocoder = NominatimGeocoder()
+
     with (
-        patch("app.services.nominatim_client.settings") as ms,
-        patch("app.services.nominatim_client.httpx.AsyncClient", return_value=_CapturingClient()),
+        patch("app.services.geocoding.nominatim.settings") as ms,
+        patch("app.services.geocoding.nominatim.httpx.AsyncClient", return_value=_CapturingClient()),
     ):
-        ms.offline_mode = False
         ms.nominatim_base_url = "https://nominatim.openstreetmap.org"
         ms.nominatim_user_agent = "GeoScopeAnalyst/0.2.0 local-test"
         ms.request_timeout_seconds = 10
 
-        await reverse_geocode(Coordinates(lat=48.8566, lon=2.3522))
+        await geocoder.reverse(Coordinates(lat=48.8566, lon=2.3522))
 
     assert "User-Agent" in captured["headers"], "Le header User-Agent doit être présent"
     assert "GeoScopeAnalyst" in captured["headers"]["User-Agent"], (
@@ -113,17 +91,19 @@ async def test_user_agent_header_is_sent():
 async def test_analyze_online_external_failure_returns_200():
     """
     L'endpoint /api/analyze doit retourner HTTP 200 même quand
-    les services externes (Nominatim, Overpass) sont indisponibles.
+    le service de géocodage est indisponible.
     Garantit que l'application ne renvoie jamais de 500 sur panne externe.
     """
     from httpx import AsyncClient, ASGITransport
     from app.main import app
 
-    # On patche les fonctions telles qu'importées dans main.py
-    with (
-        patch("app.main.reverse_geocode", side_effect=httpx.ConnectError("Connexion refusée")),
-        patch("app.main.geocode_place",   side_effect=httpx.ConnectError("Connexion refusée")),
-    ):
+    class _FailingGeocoder:
+        async def search(self, query):
+            raise httpx.ConnectError("Connexion refusée")
+        async def reverse(self, coords):
+            raise httpx.ConnectError("Connexion refusée")
+
+    with patch("app.main.get_geocoder", return_value=_FailingGeocoder()):
         async with AsyncClient(
             transport=ASGITransport(app=app), base_url="http://test"
         ) as client:
