@@ -114,16 +114,21 @@ async def analyze(req: AnalyzeRequest):
 
     confidence = compute_confidence(location, infrastructures)
 
-    if req.mode.value == "flash":
-        infrastructures = infrastructures[:5]
-
+    # generate_report calcule tous ses comptages sur la liste complète — y compris en mode
+    # flash, où seul l'affichage détaillé est tronqué en interne (avec mention explicite).
+    # Cela garantit que la justification du score de confiance et le corps du rapport
+    # citent toujours le même nombre total d'infrastructures.
     report  = generate_report(location, confidence, infrastructures, req.mode, req.radius_m)
     sources = report.pop("sources", [])
+
+    response_infrastructures = infrastructures
+    if req.mode.value == "flash":
+        response_infrastructures = infrastructures[:5]
 
     return AnalyzeResponse(
         location=location,
         confidence=confidence,
-        infrastructures=infrastructures,
+        infrastructures=response_infrastructures,
         report=report,
         sources=sources,
         warnings=warnings,

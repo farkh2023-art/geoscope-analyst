@@ -420,8 +420,6 @@ function renderReport(report) {
     description_zone:                 '🗺 Description de la zone',
     connectivite:                     '🔗 Connectivité',
     activites_economiques_probables:  '💼 Activités économiques probables',
-    occupation_du_sol_estimee:        '🌿 Occupation du sol',
-    sensibilites_environnementales:   '⚡ Sensibilités environnementales',
     contexte_territorial:             '🏙 Contexte territorial',
     niveau_confiance:                 null,
     limites_analyse:                  '⚠ Limites de l\'analyse',

@@ -43,32 +43,24 @@ def export_to_markdown(data: AnalyzeResponse) -> str:
         lines.append("## 7. Activités économiques probables")
         lines.append(r["activites_economiques_probables"] + "\n")
 
-    if "occupation_du_sol_estimee" in r:
-        lines.append("## 8. Occupation du sol estimée")
-        lines.append(r["occupation_du_sol_estimee"] + "\n")
-
-    if "sensibilites_environnementales" in r:
-        lines.append("## 9. Sensibilités environnementales")
-        lines.append(r["sensibilites_environnementales"] + "\n")
-
     if "contexte_territorial" in r:
-        lines.append("## 10. Contexte territorial")
+        lines.append("## 8. Contexte territorial")
         lines.append(r["contexte_territorial"] + "\n")
 
-    lines.append("## 11. Niveau de confiance")
+    lines.append("## 9. Niveau de confiance")
     lines.append(f"- Score : **{conf.score}/100** ({conf.label})")
     lines.append(f"- Justification : {conf.justification}\n")
 
     limits = r.get("limites_analyse", [])
     if limits:
-        lines.append("## 12. Limites de l'analyse")
+        lines.append("## 10. Limites de l'analyse")
         for lim in limits:
             lines.append(f"- {lim}")
         lines.append("")
 
     sources = r.get("sources", data.sources)
     if sources:
-        lines.append("## 13. Sources publiques")
+        lines.append("## 11. Sources publiques")
         for src in sources:
             lines.append(f"- {src}")
         lines.append("")

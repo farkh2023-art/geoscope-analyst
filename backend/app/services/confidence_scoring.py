@@ -15,7 +15,7 @@ def compute_confidence(
 
     if location.display_name and location.country:
         score += 25
-        reasons.append("reverse geocoding réussi (+25)")
+        reasons.append("géocodage réussi (+25)")
     elif location.display_name:
         score += 10
         reasons.append("géocodage partiel (+10)")

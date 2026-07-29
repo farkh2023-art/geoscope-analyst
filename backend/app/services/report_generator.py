@@ -4,7 +4,14 @@ from app.models.schemas import (
     Infrastructure,
     LocationResult,
 )
-from app.services.infrastructure_classifier import classify_by_category, summarize_categories
+from app.services.infrastructure_classifier import classify_by_category
+
+# Catégories à vocation économique (commerce, service, bureau) — exclut transport et
+# stationnement, qui sont des générateurs de flux plutôt que des activités économiques.
+_ECONOMIC_CATEGORIES = {
+    "commerce_alimentaire", "restauration", "services_personne",
+    "commerce_non_alimentaire", "sante", "bureaux", "loisirs_culture", "hebergement",
+}
 
 
 def generate_report(
@@ -14,8 +21,20 @@ def generate_report(
     mode: AnalysisMode,
     radius_m: int,
 ) -> dict:
+    # Les comptages narratifs (résumé, connectivité, économie...) portent toujours sur la
+    # liste complète, jamais sur un sous-ensemble tronqué : en mode flash, seul l'AFFICHAGE
+    # détaillé des infrastructures est limité, avec mention explicite de la troncature.
     grouped = classify_by_category(infrastructures)
-    present_categories = summarize_categories(infrastructures)
+    n_total = len(infrastructures)
+
+    display_infrastructures = infrastructures
+    truncation_note = None
+    if mode == AnalysisMode.flash and n_total > 5:
+        display_infrastructures = infrastructures[:5]
+        truncation_note = (
+            f"Mode flash : 5 infrastructures affichées ci-dessous sur {n_total} recensées au total."
+        )
+    display_grouped = classify_by_category(display_infrastructures)
 
     coords_str = (
         f"{location.coordinates.lat}, {location.coordinates.lon}"
@@ -23,10 +42,12 @@ def generate_report(
         else "Non disponibles"
     )
 
-    zone_type = _infer_zone_type(grouped)
+    limits = _build_limits(location, infrastructures)
+    if truncation_note:
+        limits.append(truncation_note)
 
     report: dict = {
-        "resume_executif": _build_summary(location, confidence, zone_type, len(infrastructures)),
+        "resume_executif": _build_summary(location, confidence, infrastructures, radius_m),
         "identification_administrative": {
             "pays": location.country or "Inconnu",
             "region": location.region or "Inconnue",
@@ -39,14 +60,14 @@ def generate_report(
             "coordonnees": coords_str,
             "rayon_analyse_m": radius_m,
         },
-        "description_zone": _describe_zone(zone_type, present_categories),
-        "infrastructures": {cat: [_format_infra(i) for i in items] for cat, items in grouped.items() if items},
+        "description_zone": _describe_zone(grouped, n_total),
+        "infrastructures": {cat: [_format_infra(i) for i in items] for cat, items in display_grouped.items() if items},
         "niveau_confiance": {
             "score": confidence.score,
             "label": confidence.label,
             "justification": confidence.justification,
         },
-        "limites_analyse": _build_limits(location, infrastructures),
+        "limites_analyse": limits,
         "sources": _list_sources(location),
     }
 
@@ -55,9 +76,7 @@ def generate_report(
         report["activites_economiques_probables"] = _infer_economy(grouped)
 
     if mode == AnalysisMode.full:
-        report["occupation_du_sol_estimee"] = _estimate_land_use(zone_type)
-        report["sensibilites_environnementales"] = _environmental_notes()
-        report["contexte_territorial"] = _territorial_context(location, zone_type)
+        report["contexte_territorial"] = _territorial_context(location, infrastructures)
 
     return report
 
@@ -68,80 +87,76 @@ def _format_infra(infra: Infrastructure) -> str:
     return f"{infra.name} — position non cartographiée"
 
 
-def _build_summary(loc: LocationResult, conf: ConfidenceResult, zone_type: str, n_infra: int) -> str:
+def _nearest(infrastructures: list[Infrastructure]) -> Infrastructure | None:
+    located = [i for i in infrastructures if i.distance_m is not None]
+    return min(located, key=lambda i: i.distance_m) if located else None
+
+
+def _build_summary(
+    loc: LocationResult,
+    conf: ConfidenceResult,
+    infrastructures: list[Infrastructure],
+    radius_m: int,
+) -> str:
     place = loc.display_name or loc.city or loc.country or "Zone inconnue"
+    n_total = len(infrastructures)
+    n_concurrents = sum(1 for i in infrastructures if i.role == "concurrent")
+    nearest = _nearest(infrastructures)
+    nearest_part = (
+        f" Établissement le plus proche : {nearest.name} ({nearest.distance_m} m)."
+        if nearest else ""
+    )
     return (
-        f"Analyse géospatiale de {place}. "
-        f"Zone identifiée comme {zone_type}. "
-        f"{n_infra} infrastructure(s) détectée(s). "
+        f"Analyse de {place} sur un rayon de {radius_m} m. "
+        f"{n_total} établissement(s) recensé(s), dont {n_concurrents} concurrent(s) direct(s) identifié(s)."
+        f"{nearest_part} "
         f"Niveau de confiance : {conf.label} ({conf.score}/100)."
     )
 
 
-def _describe_zone(zone_type: str, categories: list[str]) -> str:
-    desc = f"Zone à dominante {zone_type}."
-    if categories:
-        desc += f" Secteurs présents : {', '.join(categories)}."
-    return desc
-
-
-def _infer_zone_type(grouped: dict) -> str:
-    if grouped.get("transport") and grouped.get("bureaux"):
-        return "urbaine dense"
-    if grouped.get("sante") or grouped.get("education"):
-        return "urbaine résidentielle"
-    return "mixte"
+def _describe_zone(grouped: dict, n_total: int) -> str:
+    if n_total == 0:
+        return "0 infrastructure recensée dans le rayon d'analyse."
+    counts = sorted(
+        ((cat, len(items)) for cat, items in grouped.items() if items),
+        key=lambda x: -x[1],
+    )
+    breakdown = ", ".join(f"{cat} ({n})" for cat, n in counts)
+    return f"{n_total} infrastructure(s) recensée(s) dans le rayon d'analyse. Répartition par catégorie : {breakdown}."
 
 
 def _describe_connectivity(grouped: dict) -> str:
-    transport = grouped.get("transport", [])
+    transport = sorted(
+        (i for i in grouped.get("transport", []) if i.distance_m is not None),
+        key=lambda i: i.distance_m,
+    )
     if not transport:
-        return "Connectivité faible ou non détectée."
-    types = {i.type for i in transport}
-    parts = []
-    if any("railway" in t or "station" in t for t in types):
-        parts.append("réseau ferroviaire")
-    if any("highway" in t or "motorway" in t or "primary" in t for t in types):
-        parts.append("axes routiers principaux")
-    if any("airport" in t or "aerodrome" in t for t in types):
-        parts.append("infrastructure aéroportuaire")
-    return "Bonne connectivité via " + ", ".join(parts) + "." if parts else "Réseau de transport présent."
+        return "0 infrastructure de transport recensée dans le rayon d'analyse."
+    shown = ", ".join(f"{i.name} ({i.distance_m} m)" for i in transport[:5])
+    extra = f" (+{len(transport) - 5} autre(s))" if len(transport) > 5 else ""
+    return f"{len(transport)} infrastructure(s) de transport recensée(s) : {shown}{extra}."
 
 
 def _infer_economy(grouped: dict) -> str:
-    clues = []
-    if grouped.get("bureaux"):
-        clues.append("activité tertiaire et services aux entreprises")
-    if grouped.get("education"):
-        clues.append("services d'enseignement")
-    if grouped.get("sante"):
-        clues.append("services de santé")
-    if grouped.get("transport"):
-        clues.append("économie liée aux flux et mobilités")
-    return ", ".join(clues).capitalize() + "." if clues else "Activités économiques non déterminées avec les données disponibles."
-
-
-def _estimate_land_use(zone_type: str) -> str:
-    if zone_type == "urbaine dense":
-        return "Concentration de commerces, bureaux et transports — usage majoritairement tertiaire."
-    if zone_type == "urbaine résidentielle":
-        return "Présence de services de santé et/ou d'éducation — usage majoritairement résidentiel."
-    return "Usage mixte : données insuffisantes pour trancher entre résidentiel, tertiaire et commercial."
-
-
-def _environmental_notes() -> str:
-    # La taxonomie commerce (Étape 2) n'interroge plus les tags environnementaux
-    # (waterway, leisure=park, power) : aucune donnée de cette nature n'est collectée.
-    return "Aucune donnée environnementale collectée avec la taxonomie commerce actuelle."
-
-
-def _territorial_context(loc: LocationResult, zone_type: str) -> str:
-    city = loc.city or "la zone"
-    return (
-        f"{city} se présente comme une zone {zone_type} "
-        f"au sein de {loc.region or loc.country or 'la région'}. "
-        "Les données publiques disponibles suggèrent une centralité locale modérée à forte."
+    counts = sorted(
+        ((cat, len(items)) for cat, items in grouped.items() if items and cat in _ECONOMIC_CATEGORIES),
+        key=lambda x: -x[1],
     )
+    if not counts:
+        return "0 établissement à vocation économique recensé dans le rayon d'analyse."
+    total = sum(n for _, n in counts)
+    breakdown = ", ".join(f"{cat} : {n}" for cat, n in counts)
+    return f"{total} établissement(s) à vocation économique recensé(s) : {breakdown}."
+
+
+def _territorial_context(loc: LocationResult, infrastructures: list[Infrastructure]) -> str:
+    admin = ", ".join(p for p in (loc.city, loc.department, loc.region) if p) or "zone non identifiée administrativement"
+    nearest = _nearest(infrastructures)
+    if nearest:
+        nearest_part = f"L'infrastructure la plus proche du point analysé est {nearest.name} ({nearest.category}), à {nearest.distance_m} m."
+    else:
+        nearest_part = "0 infrastructure localisée n'a été recensée dans le rayon d'analyse."
+    return f"Localisation administrative : {admin}. {nearest_part}"
 
 
 def _build_limits(loc: LocationResult, infrastructures: list[Infrastructure]) -> list[str]:
@@ -149,8 +164,12 @@ def _build_limits(loc: LocationResult, infrastructures: list[Infrastructure]) ->
     if loc.coordinates is None:
         limits.append("Aucune coordonnée GPS : localisation basée sur le géocodage textuel, moins précise.")
     if len(infrastructures) < 3:
-        limits.append("Peu d'infrastructures détectées : couverture OSM peut être incomplète dans cette zone.")
-    limits.append("Données issues de sources publiques ouvertes uniquement (OSM, Nominatim).")
+        limits.append(f"{len(infrastructures)} infrastructure(s) détectée(s) : couverture OSM potentiellement incomplète dans cette zone.")
+    limits.append("Données issues de sources publiques ouvertes uniquement (OSM, Nominatim/Géoplateforme).")
+    limits.append(
+        "La taxonomie commerce actuelle ne collecte pas de données sur l'occupation du sol ni les "
+        "sensibilités environnementales (waterway, leisure=park, power ne sont pas interrogés)."
+    )
     limits.append("Les éléments déduits ou probables sont à vérifier sur le terrain.")
     return limits
 
