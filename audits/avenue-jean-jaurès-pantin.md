@@ -1,7 +1,7 @@
 # Rapport GeoScope Analyst
 
 ## 1. Résumé exécutif
-Analyse de Avenue Jean Jaurès 93500 Pantin sur un rayon de 800 m. 200 établissement(s) recensé(s), dont 9 concurrent(s) direct(s) identifié(s). Établissement le plus proche : Franprix (41 m). Niveau de confiance : élevé (90/100).
+Analyse de Avenue Jean Jaurès 93500 Pantin sur un rayon de 800 m. 535 établissement(s) recensé(s), dont 13 concurrent(s) direct(s) identifié(s). Établissement le plus proche : Franprix (41 m). Niveau de confiance : élevé (90/100).
 
 ## 2. Identification administrative
 - **Pays** : France
@@ -16,7 +16,7 @@ Analyse de Avenue Jean Jaurès 93500 Pantin sur un rayon de 800 m. 200 établiss
 - Rayon d'analyse : 800 m
 
 ## 4. Description de la zone
-200 infrastructure(s) recensée(s) dans le rayon d'analyse. Répartition par catégorie : restauration (72), commerce_non_alimentaire (32), services_personne (30), commerce_alimentaire (27), transport (18), sante (5), hebergement (5), autre (5), education (3), bureaux (2), loisirs_culture (1).
+535 infrastructure(s) recensée(s) dans le rayon d'analyse. Répartition par catégorie : stationnement (133), restauration (113), commerce_non_alimentaire (53), commerce_alimentaire (50), autre (48), services_personne (40), transport (35), education (34), bureaux (8), loisirs_culture (8), hebergement (7), sante (6).
 
 ## 5. Infrastructures détectées
 ### Commerce_alimentaire
@@ -31,22 +31,45 @@ Analyse de Avenue Jean Jaurès 93500 Pantin sur un rayon de 800 m. 200 établiss
 - Boulanger Pâtissier Traiteur — 418 m
 - Danial Alimentation générale — 440 m
 - Sans nom — 441 m
+- Carrefour City — 447 m
+- Allo Boissons — 471 m
 - Sans nom — 472 m
+- Alimentation Générale — 475 m
+- Le Croissant Dore — 489 m
+- Sans nom — 495 m
+- La Rose de Tunis — 517 m
+- Franprix — 530 m
 - Aïda — 531 m
 - Sitis Market — 535 m
 - Franprix — 539 m
 - Sans nom — 544 m
+- G20 — 550 m
 - Boulangerie Bel Air — 566 m
 - Boucherie Barradj — 569 m
+- Aldi — 570 m
+- Bengal Super Marche — 574 m
 - O' Grand Délice — 578 m
+- Sans nom — 592 m
+- L'artisan A & F — 605 m
 - Sans nom — 628 m
+- Kirpa — 636 m
+- Brûlerie Saint-Jacques — 646 m
+- T.T Boutique — 648 m
+- Qualité Vin — 654 m
+- Afrique Moderne — 669 m
+- LM boulangerie pâtisserie pizza — 671 m
+- Assumait Super Market — 683 m
+- La Pralinoise — 686 m
 - Intermarché Express — 708 m
 - Julienne — 723 m
+- Marché couvert Magenta temporaire — 741 m
 - Alimentation Générale Hanoute — 744 m
 - Sans nom — 774 m
 - Sans nom — 776 m
+- Franprix — 777 m
 - Boulangerie Artisanale — 778 m
 - Hadja Exotique — 779 m
+- 2M Aubervilliers — 790 m
 ### Restauration
 - Le Beau Relais — 44 m
 - Alex — 64 m
@@ -74,18 +97,31 @@ Analyse de Avenue Jean Jaurès 93500 Pantin sur un rayon de 800 m. 200 établiss
 - Chez Ribeiro — 328 m
 - Quality Pizza — 343 m
 - La Casa — 349 m
+- Sidi Bou — 365 m
+- Auberkitchen — 398 m
 - Sans nom — 403 m
+- À Bientôt Pizza — 406 m
 - Sans nom — 429 m
 - Le Bresson — 429 m
 - Tasty Crousty — 436 m
+- Le Cinq — 437 m
 - Chez Fernand — 440 m
+- Chez l'ancien — 442 m
 - Yi Xin — 446 m
 - Le Neuf 3 — 453 m
 - Soleil de Bodrum — 460 m
+- Pizza Dinapoli — 461 m
 - Hayal — 465 m
 - Le Carrefour — 470 m
+- Djerba Food — 478 m
+- Madison — 481 m
+- Nawab — 489 m
+- Al Hillal — 490 m
 - Challenger — 500 m
+- El Mordjane — 506 m
 - Le Triomphe — 513 m
+- La Cantine du Pas Si Loin — 515 m
+- Zarda Food — 523 m
 - Wok Thaï Food — 525 m
 - Golden Fried Chicken — 527 m
 - Le Marigny — 532 m
@@ -95,30 +131,58 @@ Analyse de Avenue Jean Jaurès 93500 Pantin sur un rayon de 800 m. 200 établiss
 - Le Josserand — 546 m
 - L'Espace Vert — 549 m
 - Le Capri — 550 m
+- Sonar Bangla — 551 m
 - Le Station — 558 m
+- Mes Tacos — 563 m
+- Pizza Hut — 571 m
 - 2 Mille 4 — 573 m
+- De l'Europe — 575 m
 - Chicken Fried Café — 595 m
 - Sans nom — 604 m
+- Delices — 605 m
 - Piscadou — 608 m
+- O'Tacos — 610 m
+- La Cantine Arkose — 617 m
 - Le Petit Bouguet — 618 m
 - Le Sentiment — 621 m
+- Le Pile ou Face — 621 m
+- Comptoir — 627 m
+- Sofra — 631 m
+- 7 Pizza — 637 m
+- Olympia — 641 m
 - Le Vaillant — 649 m
 - Café Ankara — 656 m
+- L’Arlequin — 663 m
+- O'Tacos — 675 m
+- Au bon coin — 676 m
+- Jenna Pizza — 678 m
+- Espace de restauration Pailler — 681 m
+- Naan Wich — 691 m
+- Lella Meryam — 692 m
 - La Maison — 693 m
 - Cirta — 696 m
 - Royal Asia Best Food — 702 m
+- Sans nom — 702 m
+- Pizza Capri — 711 m
 - Le Bar des Amis — 712 m
+- Bar PMU — 718 m
 - Istanbul — 733 m
 - Snack Time — 736 m
 - Le Muscat — 747 m
 - Au roi du Café — 748 m
+- Bowlognese — 748 m
+- Le Renaissance — 749 m
 - Chicago — 756 m
 - Sans nom — 756 m
 - Sans nom — 759 m
+- Big Fernand — 759 m
 - Pizzeria Bella Italia — 761 m
 - Le Rallye — 764 m
 - Aux Sportifs — 774 m
 - Sans nom — 777 m
+- Restaurant Dardanel — 777 m
+- Chicken Drive — 780 m
+- La Crêpe — 785 m
 - Le Flash — 797 m
 ### Services_personne
 - Sans nom — 111 m
@@ -137,17 +201,27 @@ Analyse de Avenue Jean Jaurès 93500 Pantin sur un rayon de 800 m. 200 établiss
 - Rana — 435 m
 - BNP Paribas — 481 m
 - Caisse d'Épargne — 485 m
+- Optique D — 493 m
 - Grande pharmacie des 4 chemins — 505 m
+- Optique — 510 m
+- centrOptic — 514 m
 - Coiffure Béatrice — 521 m
 - Pressing 93 — 523 m
 - Sans nom — 532 m
 - Optique Becquet — 539 m
 - Pantin Quatre Chemins — 555 m
 - Pantin 4 Chemins — 556 m
+- SG Coiffure — 599 m
 - Superlav — 604 m
+- SG — 605 m
+- Laverie — 634 m
+- Menz Parlour — 646 m
+- Sans nom — 653 m
 - MC Cosmétique — 654 m
 - Laverie WBI Pantin — 666 m
+- Coiffure Sam — 728 m
 - Coiffage Rahim — 748 m
+- Nouvelle Hair — 762 m
 - Sans nom — 773 m
 - Asta Cosmétiques — 778 m
 - Sans nom — 782 m
@@ -164,6 +238,7 @@ Analyse de Avenue Jean Jaurès 93500 Pantin sur un rayon de 800 m. 200 établiss
 - Zayna Couture — 240 m
 - D.A.M — 301 m
 - Technic Machines — 304 m
+- Totem — 308 m
 - Midas — 317 m
 - Auto Distribution — 323 m
 - TS Online — 390 m
@@ -171,78 +246,339 @@ Analyse de Avenue Jean Jaurès 93500 Pantin sur un rayon de 800 m. 200 établiss
 - Allo Amigo — 413 m
 - Sissi Voyages — 422 m
 - Sabiha Télécom — 429 m
+- La Fripouille D'Aubervilliers — 460 m
+- Rayan Auto — 465 m
+- Gade Cosmétiques — 472 m
+- Guerissol — 482 m
 - Discountphone.fr — 516 m
+- Leader Santé Medical Store — 519 m
+- Euros-Costumes — 537 m
+- Heyaa — 555 m
 - Jardin des 4 Chemins — 557 m
+- Auber Voyages — 558 m
 - Sans nom — 566 m
 - Sans nom — 573 m
+- La Réserve des arts — 588 m
+- Best Home — 593 m
+- Id Garage Père et fils — 597 m
 - Discount my Car — 616 m
+- Sans nom — 621 m
+- Brico Pas Cher Et Lino — 627 m
 - 4 services — 634 m
 - 4 assurances — 641 m
+- Magasin Général du Vélo — 653 m
+- Sans nom — 661 m
+- Les Vélos de La Brèche — 677 m
 - Nora Orientale — 685 m
+- Le Concorde — 686 m
+- Sans nom — 712 m
 - Sans nom — 743 m
 - Mogal International Telecom — 765 m
 - Sans nom — 777 m
 - Tabac Presse — 786 m
 - La Cyclofficine de Pantin — 787 m
+- Sans nom — 789 m
+- Sans nom — 797 m
 ### Sante
 - Pharmacie Vidal Duvernet — 221 m
 - Grande Pharmacie des 4 Chemins — 499 m
 - Pharmacie Moderne — 503 m
+- Pharmacie des 4 Communes — 585 m
 - Pharmacie Sultan — 663 m
 - Pharmacie du Marché — 744 m
 ### Education
+- École élémentaire publique Denis Diderot — 149 m
+- École maternelle Denis Diderot — 174 m
+- Collège Saint Joseph — 194 m
+- École primaire privée Sainte-Marthe — 203 m
+- Crêche Familliale Mini Crêche Lecuyer — 210 m
+- Lycée général et technologique Marcelin Berthelot — 274 m
 - Section d'enseignement général et professionnel adapté Jean Moulin — 330 m
+- Collège Jean Moulin — 346 m
+- École maternelle Publique Taos Amrouche — 368 m
+- École élémentaire Charlotte Delbo — 421 m
+- Lycée professionnel Jean-Pierre Timbaud — 430 m
+- Crèche Départementale Annie Fratellini — 449 m
+- Lycée Jean-Pierre Timbaud — 450 m
+- Institut National du Patrimoine — 522 m
+- École élémentaire Jean Macé — 539 m
+- École primaire Condorcet — 564 m
+- École élémentaire Jean Jaurès — 566 m
+- Sans nom — 591 m
 - École élémentaire Edouard Vaillant — 597 m
+- École élémentaire Jules Guesde — 603 m
 - École maternelle Jean Lolive — 619 m
+- École maternelle Paul Bert — 636 m
+- École Primaire Montessori 21 Aubervilliers-Villette — 643 m
+- Guidepost Montessori — 648 m
+- Sans nom — 682 m
+- École élémentaire Joséphine Baker — 683 m
+- École maternelle Jean Perrin — 683 m
+- Collège et Lycée Henri Wallon — 690 m
+- École maternelle Anne Sylvestre — 702 m
+- Lycée Henri Wallon — 725 m
+- Collège Henri Wallon — 736 m
+- École élémentaire Joliot-Curie — 740 m
+- Archives de l'École des Hautes Études en Science Sociales — 741 m
+- École élémentaire Paul Langevin — 763 m
 ### Transport
+- Condorcet — 158 m
 - Condorcet — 162 m
+- Cimetière Parisien — 213 m
+- Condorcet — 213 m
 - Cimetière Parisien — 266 m
+- Quatre Chemins — 441 m
+- Quatre Chemins — 450 m
 - Paul Bert — 455 m
 - Avenue Édouard Vaillant — 468 m
+- Quatre Chemins - République — 470 m
 - Avenue Jean Jaurès — 473 m
 - Hôpital la Roseraie — 473 m
 - Quatre Chemins - République — 477 m
 - Avenue Édouard Vaillant — 483 m
+- Quatre Chemins - République — 485 m
 - Rue Lécuyer — 487 m
+- Hôpital la Roseraie — 487 m
 - Aubervilliers - Pantin - Quatre Chemins — 496 m
+- Quatre Chemins - République — 498 m
+- Quatre Chemins - République — 502 m
 - Avenue de la République — 506 m
 - Rechossière — 506 m
+- Hôpital la Roseraie — 511 m
 - Quatre Chemins - Édouard Vaillant — 513 m
 - Quatre Chemins - Édouard Vaillant — 532 m
+- Quatre Chemins - La Poste — 534 m
 - Cartier-Bresson — 546 m
 - Les Roses — 604 m
+- Rechossière — 611 m
+- Rue des Cités — 640 m
+- Paul Bert — 643 m
+- Rue des Cités — 652 m
 - La Pérouse — 657 m
+- Magenta — 678 m
 - La Pérouse — 709 m
 ### Bureaux
+- Société centrale canine — 289 m
 - France Travail — 510 m
 - Sans nom — 512 m
+- Guy Hoquet — 583 m
+- Centre Municipal de Santé — 651 m
+- Century 21 — 662 m
+- CEMEA - Île-de-France — 666 m
+- St Exupéry creche — 754 m
 ### Loisirs_culture
+- Gymnase Léo lagrange — 521 m
+- Arkose Pantin — 605 m
+- Arkose Pantin — 624 m
 - Bibliothèque Jules-Verne — 626 m
+- Gymnase Paul Bert — 652 m
+- Stade Docteur Pieyre — 707 m
+- Médiathèque André Breton — 776 m
+- Le Five Villette — 781 m
 ### Hebergement
 - La Planète Bleue — 490 m
+- Sans nom — 525 m
 - Modern hôtel — 647 m
+- Sans nom — 719 m
 - Hôtel du Périgord — 771 m
 - Hôtel Le Magistral — 773 m
 - La Géode Bleue — 775 m
+### Stationnement
+- Sans nom — 74 m
+- Sans nom — 77 m
+- Sans nom — 80 m
+- Sans nom — 87 m
+- Sans nom — 90 m
+- Sans nom — 93 m
+- Sans nom — 97 m
+- Sans nom — 126 m
+- Sans nom — 140 m
+- Sans nom — 146 m
+- Sans nom — 148 m
+- Sans nom — 151 m
+- Sans nom — 152 m
+- Sans nom — 168 m
+- Sans nom — 171 m
+- Sans nom — 174 m
+- Sans nom — 176 m
+- Sans nom — 180 m
+- Sans nom — 181 m
+- Sans nom — 183 m
+- Sans nom — 196 m
+- Sans nom — 204 m
+- Sans nom — 212 m
+- Sans nom — 222 m
+- Sans nom — 222 m
+- Sans nom — 225 m
+- Sans nom — 249 m
+- Sans nom — 255 m
+- Sans nom — 265 m
+- Sans nom — 277 m
+- Sans nom — 278 m
+- Sans nom — 279 m
+- Sans nom — 296 m
+- Sans nom — 305 m
+- Sans nom — 321 m
+- Sans nom — 334 m
+- Sans nom — 336 m
+- Sans nom — 340 m
+- Sans nom — 340 m
+- Sans nom — 343 m
+- Sans nom — 350 m
+- Sans nom — 357 m
+- Sans nom — 359 m
+- Sans nom — 364 m
+- Sans nom — 367 m
+- Sans nom — 373 m
+- Sans nom — 375 m
+- Sans nom — 379 m
+- Sans nom — 383 m
+- Sans nom — 387 m
+- Sans nom — 392 m
+- Sans nom — 394 m
+- Sans nom — 397 m
+- Sans nom — 400 m
+- Sans nom — 404 m
+- Sans nom — 415 m
+- Sans nom — 416 m
+- Sans nom — 418 m
+- Sans nom — 421 m
+- Sans nom — 421 m
+- Sans nom — 423 m
+- Sans nom — 433 m
+- Sans nom — 433 m
+- Sans nom — 434 m
+- Sans nom — 434 m
+- Sans nom — 440 m
+- Sans nom — 443 m
+- Sans nom — 458 m
+- Sans nom — 459 m
+- Sans nom — 460 m
+- Sans nom — 463 m
+- Sans nom — 465 m
+- Sans nom — 483 m
+- Sans nom — 485 m
+- Sans nom — 501 m
+- Sans nom — 503 m
+- Sans nom — 507 m
+- Sans nom — 511 m
+- Sans nom — 513 m
+- Sans nom — 517 m
+- Sans nom — 519 m
+- Sans nom — 519 m
+- Sans nom — 527 m
+- Sans nom — 531 m
+- Sans nom — 535 m
+- Sans nom — 535 m
+- Sans nom — 537 m
+- Sans nom — 539 m
+- Sans nom — 544 m
+- Sans nom — 545 m
+- Sans nom — 550 m
+- Sans nom — 555 m
+- Sans nom — 558 m
+- Sans nom — 571 m
+- Sans nom — 575 m
+- Sans nom — 580 m
+- Sans nom — 585 m
+- Sans nom — 596 m
+- Sans nom — 598 m
+- Sans nom — 606 m
+- Sans nom — 607 m
+- Sans nom — 629 m
+- Sans nom — 631 m
+- Sans nom — 636 m
+- Sans nom — 648 m
+- Sans nom — 672 m
+- Sans nom — 678 m
+- Sans nom — 684 m
+- Sans nom — 698 m
+- Sans nom — 703 m
+- Sans nom — 715 m
+- Sans nom — 716 m
+- Sans nom — 729 m
+- Sans nom — 736 m
+- Sans nom — 737 m
+- Sans nom — 740 m
+- Sans nom — 741 m
+- Sans nom — 747 m
+- Sans nom — 748 m
+- Sans nom — 753 m
+- Sans nom — 757 m
+- Sans nom — 763 m
+- Sans nom — 777 m
+- Sans nom — 779 m
+- Sans nom — 780 m
+- Sans nom — 780 m
+- Sans nom — 782 m
+- Sans nom — 783 m
+- Sans nom — 788 m
+- Sans nom — 789 m
+- Sans nom — 791 m
+- Sans nom — 791 m
+- Sans nom — 800 m
 ### Autre
 - Sans nom — 76 m
+- Sans nom — 156 m
 - Sans nom — 162 m
+- Sans nom — 180 m
+- Sans nom — 361 m
 - Hammam Harim Essoltan — 362 m
+- Sans nom — 382 m
+- Sans nom — 529 m
+- Sans nom — 535 m
+- Sans nom — 589 m
+- Sans nom — 592 m
+- Sans nom — 617 m
+- Sans nom — 619 m
+- Sans nom — 625 m
+- Sans nom — 628 m
+- Sans nom — 631 m
+- Sans nom — 635 m
+- Sans nom — 646 m
+- Sans nom — 648 m
+- Sans nom — 663 m
+- Sans nom — 675 m
+- Sans nom — 680 m
+- Sans nom — 683 m
+- Sans nom — 685 m
+- Sans nom — 685 m
+- Sans nom — 686 m
+- Sans nom — 689 m
+- Sans nom — 693 m
+- Sans nom — 697 m
+- Sans nom — 699 m
+- Sans nom — 711 m
+- Sans nom — 716 m
+- Sans nom — 734 m
+- Sans nom — 740 m
+- Sans nom — 742 m
+- Sans nom — 749 m
+- Sans nom — 752 m
+- Sans nom — 755 m
+- Sans nom — 758 m
+- Sans nom — 758 m
 - Auto-École Magenta — 760 m
+- Sans nom — 763 m
+- Sans nom — 769 m
+- Sans nom — 773 m
+- Sans nom — 775 m
 - Auto école Magenta — 776 m
+- Sans nom — 781 m
+- Sans nom — 793 m
 
 ## 6. Connectivité
-18 infrastructure(s) de transport recensée(s) : Condorcet (162 m), Cimetière Parisien (266 m), Paul Bert (455 m), Avenue Édouard Vaillant (468 m), Avenue Jean Jaurès (473 m) (+13 autre(s)).
+35 infrastructure(s) de transport recensée(s) : Condorcet (158 m), Condorcet (162 m), Cimetière Parisien (213 m), Condorcet (213 m), Cimetière Parisien (266 m) (+30 autre(s)).
 
 ## 7. Activités économiques probables
-174 établissement(s) à vocation économique recensé(s) : restauration : 72, commerce_non_alimentaire : 32, services_personne : 30, commerce_alimentaire : 27, sante : 5, hebergement : 5, bureaux : 2, loisirs_culture : 1.
+285 établissement(s) à vocation économique recensé(s) : restauration : 113, commerce_non_alimentaire : 53, commerce_alimentaire : 50, services_personne : 40, bureaux : 8, loisirs_culture : 8, hebergement : 7, sante : 6.
 
 ## 8. Contexte territorial
 Localisation administrative : Pantin, Seine-Saint-Denis, Île-de-France. L'infrastructure la plus proche du point analysé est Franprix (commerce_alimentaire), à 41 m.
 
 ## 9. Niveau de confiance
 - Score : **90/100** (élevé)
-- Justification : coordonnées GPS présentes (+40) | géocodage réussi (+25) | 200 infrastructures trouvées (+15) | cohérence administrative complète (+10)
+- Justification : coordonnées GPS présentes (+40) | géocodage réussi (+25) | 535 infrastructures trouvées (+15) | cohérence administrative complète (+10)
 
 ## 10. Limites de l'analyse
 - Données issues de sources publiques ouvertes uniquement (OSM, Nominatim/Géoplateforme).

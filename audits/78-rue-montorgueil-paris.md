@@ -1,7 +1,7 @@
 # Rapport GeoScope Analyst
 
 ## 1. Résumé exécutif
-Analyse de 78 Rue Montorgueil 75002 Paris sur un rayon de 500 m. 200 établissement(s) recensé(s), dont 2 concurrent(s) direct(s) identifié(s). Établissement le plus proche : Au Rocher de Cancale (2 m). Niveau de confiance : élevé (90/100).
+Analyse de 78 Rue Montorgueil 75002 Paris sur un rayon de 500 m. 2374 établissement(s) recensé(s), dont 36 concurrent(s) direct(s) identifié(s). Établissement le plus proche : Au Rocher de Cancale (2 m). Niveau de confiance : élevé (90/100).
 
 ## 2. Identification administrative
 - **Pays** : France
@@ -16,234 +16,2408 @@ Analyse de 78 Rue Montorgueil 75002 Paris sur un rayon de 500 m. 200 établissem
 - Rayon d'analyse : 500 m
 
 ## 4. Description de la zone
-200 infrastructure(s) recensée(s) dans le rayon d'analyse. Répartition par catégorie : restauration (85), services_personne (23), commerce_non_alimentaire (23), transport (21), autre (15), commerce_alimentaire (12), hebergement (8), sante (4), stationnement (3), education (2), bureaux (2), loisirs_culture (2).
+2374 infrastructure(s) recensée(s) dans le rayon d'analyse. Répartition par catégorie : commerce_non_alimentaire (829), restauration (670), autre (285), services_personne (181), bureaux (127), commerce_alimentaire (126), transport (50), hebergement (30), education (28), stationnement (19), loisirs_culture (18), sante (11).
 
 ## 5. Infrastructures détectées
 ### Commerce_alimentaire
+- Le Palais du Fruit — 14 m
 - A la Mère de Famille — 16 m
+- Nicolas — 19 m
+- Esalta — 21 m
 - Paul — 24 m
+- La Fermette — 27 m
+- Poissonnerie Montorgueil — 32 m
+- Le Repaire de Bacchus — 34 m
+- Conserverie La Belle-Iloise — 37 m
+- Mariage Frères — 39 m
+- Boucherie Montorgueil — 40 m
 - Stohrer — 44 m
+- Nysa — 49 m
+- Halles Montorgueil — 52 m
 - U Express — 58 m
+- Waff' Cachée — 62 m
+- Pasticceria Simona — 67 m
+- Maison Collet — 71 m
+- Fou de Pâtisserie — 79 m
+- Jeffrey Cagnes — 80 m
+- Boucherie Tribolet — 82 m
+- Terres de Café — 94 m
+- Chapon — 97 m
+- Mimo the Baker — 100 m
+- Pralus — 103 m
+- G. Detou — 107 m
+- La Fromagerie — 110 m
+- B. B. N. — 110 m
+- Copains Tiquetonne — 113 m
+- Delitaly — 117 m
+- Venchi — 124 m
+- François Pralus — 132 m
+- Leonidas — 141 m
 - U Express — 145 m
+- Michalak — 146 m
+- Kys Paris — 155 m
 - Franprix — 159 m
+- Laura Todd — 160 m
+- G20 — 165 m
+- Eric Kayser — 166 m
+- Substance — 170 m
+- Foie gras & Co — 178 m
+- Kalany Mya — 180 m
+- L'Entrecôte Saint-Eustache — 194 m
+- Maison du Whisky — 194 m
+- Bon & Bô — 195 m
+- La Maison du saké — 201 m
+- Charles Chocolatier — 205 m
 - Naturalia — 207 m
+- Franprix — 207 m
+- Intermarché Express — 207 m
+- Rue Montmartre — 208 m
+- De Belles Manières — 218 m
+- Carrefour Express — 220 m
 - Naturalia — 221 m
+- Frenchie — 229 m
+- Mini Market — 238 m
+- Terroirs d'Avenir — 238 m
+- Biocoop — 238 m
+- La Goberie — 242 m
+- L'Arbre à Café — 242 m
+- La quéquetterie — 243 m
+- Crémerie Terroirs d'Avenir — 245 m
+- The French Bastards — 246 m
+- Odette — 246 m
+- Terroirs d'Avenir — 248 m
+- Aux fruits d'or — 252 m
+- O'Shop Châtelet — 252 m
+- Terroirs d'Avenir — 254 m
+- Terroirs d'Avenir — 257 m
+- La Miche et Lulu — 258 m
+- Cookie Love — 262 m
+- Plaq — 263 m
 - Carrefour City — 279 m
+- La Boulangerie du Sentier — 291 m
+- Mandipili — 296 m
+- Bo&Mie — 299 m
+- Vys — 306 m
+- Kurashi cafe & mart — 309 m
+- Midoré — 311 m
+- Mexicoeur — 312 m
+- Mon Marché — 313 m
+- U Express — 320 m
+- ODStore — 326 m
+- Monoprix — 331 m
+- Franprix — 338 m
+- Jenny Capri — 346 m
+- Rollin — 350 m
+- Le Chocolat Alain Ducasse — 353 m
 - Monoprix — 354 m
+- Franprix — 354 m
+- Sans nom — 357 m
+- Panier Sympa - Market Express — 359 m
+- Rrraw Cacao Factory — 368 m
+- Les Saisonniers — 371 m
+- La Prohibition — 376 m
+- Franprix — 389 m
+- Netharsan Mini Market — 405 m
+- Batter — 409 m
+- Leonidas — 416 m
+- Chez Max — 421 m
+- Paul — 427 m
+- J’ai Pain — 428 m
+- Il Fichetto — 429 m
+- Brioche Dorée — 437 m
+- Parcellaire — 440 m
+- Carrefour Express — 443 m
+- Le Moulin de la Vierge — 444 m
+- Chá — 450 m
+- baguett. — 452 m
+- YiThé — 454 m
+- A'Rhûm — 456 m
+- Maison Maudain — 456 m
+- Carrefour City — 461 m
+- Dammann Frères — 461 m
+- Causses — 469 m
+- Qasti — 474 m
+- CocciMarket — 475 m
+- Viande Viande — 477 m
+- Yazid Ichemrahen — 479 m
+- Supermarket — 482 m
 - L’Éclair de Génie — 483 m
+- Franprix — 484 m
 - Franprix — 486 m
+- Monop' — 490 m
+- Yazid Ichemrahen — 492 m
 ### Restauration
 - Au Rocher de Cancale — 2 m
+- Le Palais du Fruit — 7 m
+- La Freseria — 17 m
+- Copains Le Studio Monorgueil — 19 m
 - Manhattn's Burgers — 21 m
+- Café du Centre — 23 m
+- Jana — 28 m
+- Le Montorgueil — 29 m
+- Monsieur M — 34 m
+- Aux Crus de Bourgogne — 44 m
+- Little Italy Caffè — 45 m
+- Le Compas — 46 m
+- Chardonnay — 55 m
+- Breathe Montorgueil — 56 m
+- Maria — 58 m
+- Cul de Cochon — 60 m
+- Cloud Cakes — 61 m
 - Baguette — 62 m
+- Bianco — 62 m
+- Les Délices de Montorgueil — 65 m
+- La Pompadour Cocktail Club — 66 m
+- Jaipur Palace — 67 m
+- Le Puits Montorgueil — 69 m
+- Panetteria Simone — 71 m
+- Sweet Paradise — 74 m
+- Ivy — 75 m
+- Le Havane — 77 m
+- Miss Bánh mì — 78 m
+- Kapunka — 78 m
+- Le Boui-Boui — 79 m
+- Guiren — 79 m
+- Goute — 80 m
+- Hawa Beirut — 81 m
+- Wok On By — 84 m
 - O' Scià — 86 m
 - La mezeterie — 87 m
+- Slice — 87 m
+- Cafe Boca — 87 m
+- Groot la Tourte — 87 m
+- O Sensei Burrito — 87 m
+- Johana's Fish & Chips — 88 m
+- Le Corridor — 88 m
+- Le Malibu — 88 m
+- Alma — 89 m
+- Le Maung — 89 m
+- Tanat — 89 m
+- Redd Montorgueil — 90 m
+- Ta Sushi — 91 m
+- Cafe Devie — 91 m
+- Les Écuries — 92 m
+- Le Comptoir du Commerce — 92 m
+- Bar Devie — 94 m
 - La Grille Montorgueil — 98 m
+- Mamasans — 98 m
+- Osteria Ruggera — 98 m
+- Vieng Siam — 98 m
+- Yokosuna — 99 m
+- La Cave de Martin — 99 m
 - La Gaufrerie — 101 m
+- L'Apibo — 101 m
+- Maison du Durum Kurde — 101 m
+- Experimental Cocktail Club — 102 m
+- Osteria Ammare — 102 m
+- Suya — 102 m
+- Filakia - Petit Café d'Athènes — 104 m
+- Casa Pregonda — 104 m
+- Belgian Frithot — 105 m
+- Chez Albert et Léon — 107 m
+- Aux 3 Eléphants — 108 m
+- Koko BBQ — 108 m
+- La Maison du Ginseng — 108 m
+- Honoré — 109 m
+- Au clair de Lune — 109 m
+- Le Bellan — 112 m
+- Babylone Bis — 112 m
+- Maison Toto — 112 m
+- La Saint Sauvé — 113 m
+- La Grappe — 113 m
+- À la Main — 114 m
+- Kitchen — 115 m
+- Perpette — 120 m
+- Shana — 120 m
+- Kodama — 121 m
 - Lézard Café — 122 m
+- Shana — 124 m
+- Le Café — 125 m
+- Kokomi — 126 m
+- Jefrey's — 128 m
+- La Petite Bohème — 128 m
+- Bliss&Shake — 128 m
+- Bollynan — 129 m
+- Osteria — 129 m
+- Le Petit Poney Bar — 131 m
+- Baba Café — 132 m
 - Mama Nissa — 134 m
 - Avek Bar — 136 m
+- Chez Carrie — 136 m
+- Breizh Café Montorgueil — 136 m
+- Le Café en Rouje — 138 m
+- Sweet Intuition — 139 m
+- Basi — 140 m
 - La Cevicheria — 141 m
+- Mishka — 141 m
+- Cicchetti — 142 m
+- Halo — 142 m
+- Ami — 145 m
+- The Monocle Café & Shop Paris — 147 m
+- Dionysos — 148 m
+- Contrastes — 148 m
 - Shabour — 149 m
+- Le Presque Bout du Monde — 150 m
+- Sam Bun — 153 m
+- Dunkin' — 154 m
+- Le Next — 154 m
+- Bachaumont - Le Comptoir — 154 m
+- Baan PhanThai — 155 m
+- Zinqué — 155 m
+- Kiji — 157 m
+- Le Club House by Shinzo — 157 m
+- Brasserie Les Petits Carreaux — 159 m
+- Plov & Samsa — 160 m
 - L'Escargot Montorgueil — 161 m
+- Bachaumont — 161 m
+- Compose — 162 m
+- Mon Crème — 165 m
+- Villa Papillon — 165 m
+- La Maison du Bonheur — 166 m
+- Sushi Shop — 167 m
+- Sushi Plus — 167 m
+- Café Compagnon — 169 m
+- O'Tacos — 169 m
+- Le Bar Chaumont — 171 m
 - Comptoir de la Gastronomie — 172 m
+- Bella Sera — 172 m
+- Les Amis de Messina — 173 m
+- Les secrets du Maghreb — 173 m
+- Crêperie Montorgueil — 174 m
+- Osaka sushi — 175 m
+- L'Émeraude Saint-Sauveur — 175 m
+- Starbucks — 176 m
+- Chez Toye — 176 m
+- Le Tambour — 176 m
+- Bocamexa — 177 m
+- Le Maze — 177 m
+- Shön Dürüm Berliner Kebab — 180 m
+- Al Boustan — 184 m
+- Tékés — 184 m
+- Hainan Chicken Rice — 184 m
+- Vinhuit — 185 m
+- McDonald's — 186 m
+- Wic — 186 m
+- Avant-Comptoir des Halles — 189 m
 - Pierrot — 190 m
+- Le Cochon à l'Oreille — 190 m
+- Le Panier — 191 m
+- Les Domaines Qui Montent — 192 m
+- Golden Promise — 193 m
+- Mira — 195 m
+- Le Cœur Fou — 197 m
+- Marcelle — 197 m
+- Erh - Ryuichi Utsumi — 197 m
+- Klay — 198 m
+- Le Balto — 201 m
+- Zeytoun — 201 m
+- Bowl y roll — 202 m
+- Flâneur Coffee Club — 202 m
+- La Boca — 204 m
+- Encore Là — 204 m
+- La Pause Libanaise — 205 m
+- Dalmata — 205 m
+- Les Artizans — 207 m
+- Le Petit Bal — 208 m
+- La plume — 208 m
+- Banh mi Kim Linh — 210 m
+- La Varangue de L’Océan Indien — 211 m
 - L'Empire Bar — 212 m
+- Ippudo — 212 m
+- La Nociera — 213 m
+- KOI Thé Montorgueil — 213 m
+- Nino Fresco — 213 m
+- Brigade — 214 m
+- Le Petit Premier — 214 m
+- District — 215 m
+- Ichi Ramen — 215 m
+- Rollsy — 215 m
+- Pierre Sang — 216 m
+- Parigi Cafe — 216 m
+- Subway — 217 m
+- Pokitime — 217 m
+- Bam Karaoke Box — 217 m
+- Wepok — 217 m
+- La Maz — 217 m
+- 11h11 — 218 m
+- Johnny B. Cake — 218 m
+- Presto Fresco — 219 m
 - Le Café Noir — 220 m
+- Bistro Burger — 221 m
+- Xing Fu Tang — 221 m
+- Bubble Tea — 221 m
+- Matamata Coffee — 223 m
+- Le Saint-Eustache — 223 m
+- Liife – Montorgueil — 223 m
+- Asian 1984 — 225 m
+- Jap&Thaï — 227 m
+- Les Pâtes Vivantes — 227 m
+- Victoria — 227 m
+- Le d'Argout — 229 m
+- Lucie — 229 m
+- Piscobar — 230 m
+- La Jaja — 231 m
+- Days — 231 m
+- Color my dream — 232 m
+- Frenchie To Go — 233 m
+- Le Dénicheur — 233 m
+- MimiMe — 233 m
+- Le Lucky — 235 m
+- Maïz — 235 m
+- Little Havana — 236 m
+- Paristanbul — 236 m
+- L’Altro Frenchie — 236 m
+- Le G Five — 236 m
 - Kuccini — 238 m
 - Twinkie Breakfast & Lunch — 238 m
+- Choukran — 238 m
 - Tea House — 240 m
+- Café Père et Fils — 240 m
+- Big Black Cook — 240 m
+- Mala Bavo — 240 m
+- Hoppy Corner — 240 m
+- Crêpes et Gaufres — 240 m
+- Cuvée Noire — 241 m
+- Oakberry Açai — 242 m
+- Pan Pan — 242 m
+- Le Royal — 243 m
+- Loké — 243 m
+- Yemma — 243 m
+- Nami — 243 m
+- Starbucks — 244 m
+- DanDan — 244 m
+- Nomás Taqueria — 246 m
 - La Perla — 247 m
+- Restaurant Frenchie — 247 m
+- Awake — 247 m
+- L'Esplanade Saint-Eustache — 248 m
+- La Bise — 249 m
+- DokiDoki — 249 m
+- Keshu — 249 m
+- Les Topains — 250 m
+- Le Blainville — 250 m
+- Kiké — 251 m
+- Thaïsil — 252 m
+- Ensuite — 252 m
+- Chez Bouboule — 252 m
 - Brasserie Le Sentier — 254 m
+- 1995 — 254 m
+- Casa Verde — 254 m
+- Round Egg Buns — 254 m
 - Café Étienne — 255 m
+- Ardom Café — 256 m
+- Paolina — 256 m
+- Blend Hamburger — 257 m
+- Dimdan Maidan — 257 m
+- Petit Bao Frits — 257 m
+- Frenchie — 258 m
 - La Cordonnerie — 259 m
+- La Cantine des Pieds Nickelés — 259 m
+- Les Turbines — 259 m
+- Tigermilk — 259 m
+- Effective — 259 m
+- Kuna Bada — 259 m
+- GoGrill — 260 m
+- Origine — 260 m
+- Red Katz — 261 m
+- Gigi Gourmet Panineria — 261 m
 - Le Florida — 262 m
+- Café Madam — 262 m
+- Reset — 262 m
+- Krok — 263 m
+- Ô Château — 263 m
+- Cicciolina — 263 m
 - La Boule Maître Kebabier — 264 m
+- Roomies — 264 m
+- Boneshaker Donuts — 264 m
+- Kapunka Vegan — 265 m
+- 2ème Cru — 265 m
+- Impact — 267 m
+- Busan — 267 m
+- Petit Bao — 267 m
+- GoodNews — 268 m
+- Café Maghreb — 268 m
+- Ypsēli — 268 m
+- Pag — 269 m
 - Le Ciel De Marcel — 270 m
+- Foodi Jia-Ba-Buay — 271 m
+- Chez Lulu — 272 m
+- The Frog & Rosbif — 272 m
+- Chorn Thaï — 272 m
+- Le Traknar — 273 m
+- Zango Les Halles — 273 m
 - Joe Allen — 274 m
+- Five Pizza — 275 m
 - Rosetta — 277 m
+- Le Fridge — 278 m
+- Mister Garden — 278 m
+- De Saison — 279 m
+- Les Grands Gamins — 279 m
+- Maafim — 279 m
+- Ichi Ramen — 280 m
+- Moemachi — 280 m
+- Mugung — 282 m
+- La Maison des Michèles — 283 m
+- Uma Nota — 284 m
+- Le Tipsy Bar — 284 m
+- Tartelettes — 286 m
+- Mad Dragon — 286 m
+- Coucou Ni — 286 m
+- Fondue 9 蜀九香 — 287 m
+- Morning, — 287 m
+- Fada — 287 m
 - New Shangaï — 288 m
+- Tonton Denis — 288 m
 - Matsu Sushi — 289 m
+- Ama Vida — 290 m
+- Street Bangkok — 292 m
 - Postiche — 293 m
 - Le Monkey — 293 m
+- Café Des Halles — 296 m
+- Midi Pile — 296 m
+- Bioburger — 297 m
+- Le Réau — 297 m
+- Mamma Mia — 297 m
+- Fluffy's — 297 m
+- Celtic Clover — 298 m
+- Le Choubichou Paris Châtelet — 298 m
+- Libanito — 300 m
+- Kazdalerie — 301 m
+- Les Marmottes — 302 m
+- Galice Burger Grill — 303 m
+- Immersion — 303 m
+- Les Cariatides GAG — 303 m
 - Les Cariatides — 304 m
+- Hôtel du sentier — 305 m
+- Journey — 305 m
+- Noir — 305 m
 - Le Petit Bouillon Pharamond — 306 m
 - L'Engrenage — 306 m
+- Isadora — 307 m
+- Journey — 307 m
+- Café lai'Tcha — 308 m
+- M'sushi — 309 m
+- Le Paname — 310 m
+- Rice & Fish — 310 m
+- Bao's — 310 m
+- Central Park — 313 m
+- Caminito — 313 m
+- Pizi — 313 m
 - Echo — 316 m
+- Léon de Bruxelles — 316 m
+- Rem’s — 316 m
 - Hoki Sushi — 318 m
+- Leven — 318 m
+- Madame Rêve Café — 318 m
 - Peppe Étienne Marcel — 319 m
+- aL — 319 m
+- Atti café — 319 m
+- Ode — 320 m
+- Le Goûter Parisien — 320 m
+- Le Petit Bardel — 321 m
+- Meet & Taste — 321 m
+- Atti — 321 m
+- Alla Mano — 322 m
+- Folie crabe — 322 m
 - Le Petit Chinon — 323 m
+- Le Max Bar — 323 m
+- Le Gobelet d'Argent — 323 m
+- In Cha — 323 m
+- Tzantza — 323 m
+- Pollop — 324 m
+- La Papoterie — 325 m
+- Bella Piazza — 326 m
+- Compose — 326 m
 - Lina's — 327 m
 - Le Vieux Léon — 327 m
+- Le Petit Paris — 328 m
+- Junk Smash Burgers — 328 m
+- Momo House — 328 m
 - Le Grand Cerf — 330 m
+- Fondue Dragon — 330 m
+- Hakata Choten — 331 m
+- Petite Maison de Thé — 331 m
+- Pho Montmartre — 332 m
+- Libshop — 332 m
+- Mister Garden — 333 m
+- Résidence Forum des Halles — 333 m
+- À L'angle — 334 m
+- Clint — 334 m
+- Yi Fang Tea — 336 m
+- Gong Cha — 336 m
+- Huqqa Blue — 336 m
 - Au Pied de Cochon — 337 m
+- Au Père Fouettard — 338 m
+- Poulette — 339 m
+- Les Brigands — 339 m
 - Trantranzai — 340 m
+- Tbilissi — 340 m
+- Thé Macha — 341 m
+- Crispy Chicken — 341 m
+- Pink Koï — 342 m
+- Le Beverly — 343 m
+- L'Ivress — 345 m
+- Yamato Grill — 345 m
+- Happyness Bar — 345 m
+- Arco steakhouse — 345 m
+- L'AlbaR — 345 m
+- Huo Yan Shan — 346 m
+- L'Éclair de Génie — 346 m
+- Sunshine — 346 m
+- Poppy — 347 m
+- Le Biscornu — 347 m
+- Chez Vong — 348 m
+- Sushi Wasabi — 348 m
+- La Fresque — 348 m
+- Krispy Kreme — 349 m
+- Ibrik Kitchen — 351 m
+- L’As de Trèfle — 352 m
+- Japanos — 352 m
+- L'Artisan du Burger — 353 m
+- Ravioli Nord-Est — 354 m
+- Edgar & Achille — 354 m
+- Pépère Jean — 355 m
+- Furahaa — 355 m
+- Mắm From Hanoï — 355 m
+- Dalia — 356 m
+- Boni’s Pizzas — 356 m
+- Expres' So Tea — 358 m
+- Fleur de Pavé — 359 m
+- Fenouil Paris 2 — 359 m
 - Nelson's — 361 m
+- Piou! Piou! — 361 m
+- Noho — 363 m
+- Falafel O'Poke — 364 m
+- Café Frappé — 367 m
+- Da long yi Hot Pot — 369 m
+- Lalaland — 370 m
+- Allo Beirut — 371 m
+- Zuzuttomo Ramen — 376 m
 - Loup — 378 m
+- L'Ivress — 378 m
+- Baguette Brochette — 378 m
 - Omar Dhiab — 381 m
+- Baretto Paris — 381 m
 - Euro Fried Chicken — 383 m
+- Sicilia Bistro — 384 m
+- Bao Bling — 385 m
+- Conscience - Vietnam in Paris — 385 m
+- Goen — 387 m
+- Kei — 389 m
+- convos — 389 m
+- Blender — 389 m
+- Bistrot Gisèle — 391 m
+- Niuniu Hotpot — 391 m
 - Au Père Tranquille — 392 m
 - Le Point Zéro — 393 m
+- Popolare — 393 m
+- Leader Sushi — 394 m
+- Sicilia Bistrot — 394 m
+- Le Baltard — 395 m
+- Salatim — 395 m
+- Yuxiangting — 395 m
+- Sacré Frenchy ! — 396 m
+- Kuisinistan — 396 m
+- Pedzouille - La bassecour — 398 m
+- La Croissanterie — 400 m
+- Mira d’Or — 401 m
+- Uzungöl — 401 m
+- Gomu — 402 m
+- Dandy Bar & Kitchen — 403 m
+- Momen'Tea — 403 m
+- L'HyperBol — 405 m
+- Mon Waffle — 405 m
+- Waffle Factory — 405 m
+- La canopée — 406 m
+- Duang Duang — 406 m
+- Bubbleology — 406 m
+- Pomme de Pain — 408 m
+- Baozi Nouilles — 408 m
+- La Halle aux Grains — 412 m
+- Mamma Orso — 412 m
 - Le Bon Pêcheur — 413 m
+- Starbucks — 413 m
+- Liang Sui Bubble Tea — 413 m
+- Bentouya — 413 m
+- L'Atelier Entrecôte & Volaille — 414 m
+- Madame Pervenche — 414 m
+- Vignes en ville — 414 m
 - Le Macareux — 415 m
+- À la Cloche des Halles — 415 m
+- McDonald's — 415 m
+- Konoha Ramen — 415 m
+- Hug — 416 m
+- TB FORUM DES HALLES — 416 m
+- Lunicco — 416 m
+- IT — 417 m
+- So fresh — 417 m
+- DeliCrepe — 417 m
+- Mama Roasta — 421 m
+- Choux choux — 421 m
+- La coquille — 421 m
+- La Boissonière — 422 m
+- Tosakko ramen — 422 m
+- Gigi Gourmet — 422 m
+- KFC — 423 m
+- Tilal — 424 m
+- Wonderland Brunchy — 424 m
+- Paniers — 425 m
+- Machi machi — 425 m
+- Poke House — 426 m
+- Mannie — 426 m
+- Mofé — 427 m
 - Le Relais Du Vin — 431 m
+- Restaurant tibétain — 431 m
+- Franks — 431 m
+- Kocha — 431 m
 - L'Imprimerie — 432 m
+- Le Galibot — 432 m
 - Chez Georges — 433 m
+- Lobsta — 433 m
 - Starbucks — 434 m
+- Valentino — 434 m
+- Au Petit Trou — 434 m
+- McDonald's — 435 m
 - Le bar du moulin — 436 m
+- Krispy Kreme — 436 m
+- Mikuna Sentier — 437 m
+- Afoe — 438 m
+- L'Énigme — 439 m
+- Il Fico — 439 m
 - Lémoni Café — 442 m
+- Mei Ko — 442 m
+- Pokaina — 442 m
+- Chef Ravioli — 443 m
+- Bambou Kitchen — 444 m
+- The Good Game — 444 m
+- Délices viet — 446 m
+- Le Louis — 447 m
+- Miss Italia — 447 m
+- Qasti — 448 m
+- PW — 448 m
+- Tarboush — 448 m
+- Balou Paris 3 — 448 m
+- San Carlo — 448 m
+- Starbucks — 448 m
+- Partisan — 449 m
+- Nachos — 449 m
+- Sora — 449 m
+- Starbucks — 449 m
 - Brasserie Dubillot — 450 m
+- Restaurant National des Arts et Métiers — 450 m
+- Fidèle — 450 m
+- Poulet Braisé — 451 m
+- Santa Lyna — 451 m
 - Riz Riz — 452 m
+- Baobab — 452 m
+- Paris Nice — 452 m
+- Berliner les Halles — 452 m
+- Sushi Way Forum des Halles — 453 m
+- Stella Mia — 453 m
 - Tabac Jean Christophe — 454 m
+- Twilsons — 455 m
+- Our House — 457 m
+- Chaï Bubble — 459 m
+- Panurge — 460 m
+- Anatolien — 461 m
+- Los Brothers — 461 m
+- Starbucks — 461 m
 - Land&Monkeys — 462 m
+- Chicken factory — 462 m
+- 1er Art — 463 m
+- Cococo — 463 m
+- Verona — 464 m
+- Kin Kan — 466 m
+- Le Café de l’Image — 466 m
+- Hall's beer Tavern — 467 m
+- Creperie-alo — 467 m
+- Will's Deli — 467 m
+- Yan Huo — 468 m
+- Le Comptoir belge — 469 m
 - Tabac Victoire — 470 m
+- Le Sacré — 470 m
+- Fondue Zhangge — 471 m
+- Karaoke Box Bart Paris 3 — 471 m
+- Qasti Shawarma & Grill — 471 m
 - Aux Trois Maillets — 472 m
 - Qasti Sharwarma — 472 m
+- Faurn — 473 m
 - Le Nom m'échappe — 474 m
+- Café Sarah — 474 m
+- Pita Tacos — 475 m
+- Eats Thyme — 475 m
+- La pince à cornichons — 475 m
+- Les Fines Gueules — 475 m
 - L'ours Martin — 476 m
+- Storyteller — 476 m
+- Les Petites Casseroles — 477 m
+- Mama No Bento — 477 m
+- Le Merci — 477 m
+- Le Bouquet Garni — 477 m
+- Barbac — 477 m
+- One Corner — 477 m
+- Le Bistrot de la Gaité — 478 m
+- L'Envers — 478 m
 - Hippopotamus — 479 m
 - L'Art Brut Bistrot — 481 m
+- Cojean — 481 m
+- Café Georgette Paris — 481 m
+- Rolls — 481 m
 - Nae's Izakaya — 482 m
 - Ismaïl — 482 m
 - Le Louchébem — 482 m
+- Maker Jeûneurs — 482 m
 - Mabrouk — 483 m
+- Kisoro — 483 m
+- Berko — 483 m
+- Sushi Ni — 483 m
+- Matka — 484 m
+- La famille heureuse — 484 m
+- Frichti — 484 m
+- Chez Zaza — 485 m
+- Chez Elie — 486 m
 - Bouillon du Croissant — 487 m
 - Le Bourgeon — 487 m
 - Le Galant — 487 m
+- Le Bistrot du Croissant — 487 m
 - Cafe Blanchet — 488 m
+- Le Carlie — 488 m
+- Curry bowl — 488 m
+- Indiana Café — 489 m
+- Le Workshow Paris — 489 m
+- Kalbas' — 489 m
+- Bigo — 490 m
+- Auberge Nicolas Flamel — 490 m
 - L'Attirail Café — 491 m
 - Le Marigny — 491 m
+- Fondue Zhangge — 491 m
+- Montézuma Café — 492 m
+- Bizim Café — 492 m
 - Uno — 493 m
 - Bistrot Victoires — 493 m
+- Burger King — 493 m
+- Culot! — 493 m
+- La petite Georgette — 493 m
+- Label Ferme — 493 m
 - Cali Sisters — 495 m
+- La Baignoire — 495 m
+- Vertus Bar à Jus — 495 m
+- Irasshai — 495 m
+- La Médina — 495 m
+- Trois Fois Plus de Piment — 496 m
+- Sénégalette — 496 m
+- Planche — 496 m
+- Chez Léo — 497 m
+- DNoodles 70 — 497 m
+- L'Auberge de Nicolas Flamel — 497 m
+- Kiwa — 498 m
+- Oishi — 498 m
+- Mosugo — 498 m
 - Paya Thaï — 499 m
+- I Ladro di Fichi — 499 m
 - Au Chien qui Fume — 500 m
+- Neonato — 500 m
 ### Services_personne
+- Izipizi — 12 m
+- La Sultane de Saba — 35 m
+- Sawan — 41 m
+- Jean-Marc Joubert — 42 m
+- Le Caribou — 59 m
+- Laverie Libre Service — 64 m
+- Coiff1rst — 64 m
+- Sonia Sghaier — 66 m
+- FDedign — 67 m
+- Jimmy Fairly — 71 m
+- IEL coiffure & esthétique — 79 m
+- Viet Nails — 80 m
+- AS Coiffure — 82 m
+- Biocoiff — 83 m
+- Ban Thaï Spa — 83 m
 - Ellipsis — 87 m
+- Derya Institut — 89 m
+- Pressing Alaska — 96 m
+- La Sultane de Saba — 96 m
+- Laz Esthic — 96 m
+- Laverie libre-service — 99 m
+- La Bonnemaison — 99 m
+- Atelier retouche Zelda — 109 m
+- Arnaud Payel — 118 m
+- Savary — 118 m
+- Bon SPA Thai — 122 m
+- Laverie libre service Eclat — 125 m
+- Crédit Mutuel — 127 m
+- Clown Tattoo Shop — 133 m
+- L'Atelier du sourcil — 137 m
+- Pressing Montorgueil — 147 m
+- Paris Hair Concept — 147 m
 - Crédit Agricole — 153 m
+- Jean Marc Joubert — 153 m
+- Marc Le Bihan — 156 m
+- Madame Z — 156 m
+- Le 39 Optique — 158 m
+- Nails 87 — 166 m
+- The Caste — 166 m
 - Société Générale — 168 m
+- Pour Vous Beaux Yeux — 169 m
+- Fil me in — 170 m
+- Eye Show — 178 m
+- Detentation — 180 m
+- Shoukounin — 181 m
+- Amber — 183 m
+- BRED — 188 m
+- Nuru spa — 190 m
+- $tudio20 — 191 m
+- Nuxe — 194 m
+- Lucille Brunette — 201 m
+- Les jardins de Nana — 202 m
+- Léopold Coiffure — 205 m
+- Kenwell by Mehdi — 205 m
+- Di Me — 206 m
 - Paris Sentier — 210 m
+- Body Minute — 213 m
+- Rive Gauche — 214 m
+- France Barbier — 216 m
+- CIC — 217 m
+- 3D Haircut — 223 m
+- Point Sun — 225 m
+- Panam’optic — 226 m
+- À l'Eau Bike — 229 m
+- Lunettes Pour Tous — 232 m
+- Body Minute — 232 m
+- Aesthé - Studio Facekult — 233 m
+- Innerskin — 235 m
+- Archives78 — 236 m
+- Vogue Optique — 240 m
+- Nails 87 — 243 m
+- Cute — 250 m
+- Linda Beauty Bar — 253 m
+- French and the city — 255 m
+- Bonhomme — 257 m
+- Ylinne — 258 m
 - Optic 2000 — 262 m
+- Lune Bleme — 268 m
+- Beauté — 270 m
+- Esthetic Center — 270 m
+- Les vernis parisiens — 275 m
+- L’Appartement 235 — 278 m
+- Choki Choki — 279 m
+- Flou - Optique et audition — 281 m
+- Didact — 283 m
+- Chill & Heal — 286 m
 - Better Than Cream — 292 m
+- Meet Nail — 292 m
+- Thaï Harmonie Spa — 292 m
+- Optique — 294 m
+- Paris Louvre — 296 m
+- Jean-Marc Joubert - Paris Etienne Marcel — 300 m
+- Tourne tes Locks — 303 m
+- Beauté — 317 m
+- The Barber Shop — 324 m
+- Chance Barbershop — 324 m
 - BNP Paribas — 325 m
 - Caisse d'Épargne — 333 m
+- Seven Tif Seven — 334 m
+- Bloom — 334 m
+- Sequoia Pressing — 339 m
+- Lys Tattoo Piercing — 340 m
+- Salon massage — 343 m
 - Caisse d'Épargne — 344 m
+- Dermolift x 8Beauty — 345 m
+- 1982 Coiffure — 346 m
+- Le salon de l’Ongle — 346 m
+- Ma laverie — 361 m
+- Sunny Nails — 362 m
+- Spa Thai — 364 m
+- Point soleil — 367 m
+- Pöme — 367 m
+- Colorful Black — 368 m
+- Smart Duck — 368 m
+- Sans nom — 373 m
+- Colorful Black — 374 m
+- 2A Barber — 374 m
+- La souche — 376 m
+- Maison du Tui Na — 379 m
+- Lab Paris Tattoo Shop — 379 m
 - SG — 380 m
+- Lav & Co — 381 m
 - CIC — 382 m
+- R’factory — 384 m
+- Maison Maglory — 385 m
+- Herbert Bauer — 386 m
 - Tandem — 389 m
+- Lelsa — 391 m
+- Lili Creuk Le Salon — 397 m
 - BRED — 402 m
+- La Belle Boucle - Le Studio de Paris — 407 m
+- Synergie Barber — 408 m
 - SG — 409 m
+- Le Salon d’Helo — 413 m
 - Lunigal — 415 m
+- Magic Art — 416 m
 - Dessange — 419 m
+- Banque de France — 421 m
+- Hairy TaJ — 423 m
+- Prestige Barber — 423 m
+- Naturellement Luxe — 423 m
+- Rose Donald — 424 m
+- La Reine Spa — 426 m
+- Pressing — 427 m
+- Ma laverie — 429 m
+- Handsōme — 432 m
+- Atelier Pape — 432 m
+- Estheclinic — 432 m
+- Nails in Paris — 434 m
 - La Mine de Charbon — 435 m
+- Opti shop — 439 m
+- L'appart 36 — 440 m
+- Alain Afflelou — 447 m
+- Zen d'Amour — 449 m
+- Djelani Maachi — 451 m
 - CIC — 452 m
+- Massagerie — 453 m
+- Institut mademoiselle — 454 m
+- U & Mi Nails — 458 m
 - CCF — 464 m
+- Body Minute — 464 m
+- Le Club — 467 m
 - CIC — 469 m
+- LCL — 474 m
+- Tattoo Piercing — 477 m
+- Ming Coiffure — 477 m
 - CIC — 478 m
+- B Zen Spa — 478 m
+- Skin chic — 480 m
+- Pierre Cohen — 480 m
+- SG — 481 m
+- Sans nom — 482 m
+- Kevin Murphy — 486 m
+- Sans nom — 486 m
+- Intercoiffure — 491 m
+- Je n’arrive qu’à t’écrire la Nuit — 493 m
+- Mélissage — 494 m
+- An-mo — 496 m
+- Retouches — 496 m
 - Société Générale Bourse — 497 m
 - Halles Optique — 498 m
 ### Commerce_non_alimentaire
+- Sans nom — 25 m
+- Sans nom — 31 m
+- Sans nom — 31 m
+- Merippa — 46 m
+- Sans nom — 47 m
+- Idea — 48 m
+- Firn — 48 m
 - Sans nom — 51 m
+- Sans nom — 55 m
+- Sans nom — 60 m
+- Le Calumet — 65 m
+- Timuntu — 66 m
+- Quincaillerie Dujardin — 69 m
+- Sans nom — 81 m
+- Sans nom — 84 m
+- Anaïs — 87 m
+- Vintage Century — 87 m
+- Capsule — 88 m
+- La Petite Étoile — 89 m
+- Pickers — 90 m
+- Dr. Phone — 90 m
+- L'atelier d'Amaya — 91 m
+- Sans nom — 95 m
+- Anthony Peto — 99 m
+- Sans nom — 99 m
+- Not So Big — 103 m
+- Sans nom — 104 m
+- Sans nom — 104 m
+- Icone — 105 m
+- Sans nom — 106 m
+- Neut — 109 m
+- Laps — 111 m
+- Sessun — 112 m
+- Mandarine — 114 m
+- Guess — 114 m
+- Sans nom — 114 m
+- Perles de Pluie — 116 m
+- Lis Photo — 116 m
+- American Vintage — 118 m
+- American Vintage — 119 m
+- Sans nom — 120 m
+- Showroom Tchi Tcha — 120 m
+- Intissimi — 121 m
+- Tissus au detail — 125 m
+- Accès Star — 128 m
+- Rouje — 130 m
+- Kiliwatch — 133 m
+- La Petite Boutique — 133 m
+- Apnée — 133 m
+- Thule — 133 m
+- Luv Box — 134 m
+- No Name — 136 m
+- La Ressourcerie l’Alternative — 137 m
+- Pullin — 139 m
+- Sans nom — 139 m
+- Sweet Pants — 141 m
+- Amplifon — 144 m
+- IDM — 144 m
+- Comptoir des Cotonniers — 146 m
+- Petit Bateau — 147 m
+- Shinzo Kids — 147 m
+- Loris — 149 m
+- Korean Cosmetics — 151 m
+- Schmoove — 153 m
+- Café Coton — 153 m
+- Le 39 Skateshop — 153 m
+- A. Simon — 154 m
+- Sans nom — 154 m
+- 58m. — 155 m
+- Le 39 nv — 155 m
+- Shinzo — 155 m
+- Royalcheese — 156 m
+- Éric et Lydie — 156 m
+- Sans nom — 159 m
+- Sans nom — 159 m
+- Shinzo Trail run — 160 m
+- Tabac Vanita — 161 m
+- Sans nom — 161 m
+- Sans nom — 164 m
+- Sans nom — 165 m
+- Risoul — 165 m
+- Trouble Obsessinnel Culinaire — 167 m
+- Le Temps des Cerises — 167 m
+- NoSmoking — 167 m
+- Heroes — 167 m
+- Voltaire — 168 m
+- Dear — 172 m
+- Barracuda — 172 m
+- COS — 173 m
+- Replay — 175 m
+- Cecile Boccara — 176 m
+- Sans nom — 176 m
+- Petit Bateau — 177 m
+- Shinzo Basketball — 177 m
+- Sans nom — 177 m
+- Replay — 178 m
+- Sans nom — 178 m
+- Sans nom — 178 m
+- Cotélac — 180 m
+- Denim Studio — 181 m
+- Napapijri — 182 m
+- Sans nom — 183 m
+- Diesel — 184 m
+- Sans nom — 184 m
+- Passage du Grand-Cerf — 184 m
+- Berenice — 185 m
+- Maje — 185 m
+- Nose — 186 m
+- Le Petit Souk — 187 m
+- Blissim — 187 m
+- Rue Du Cachemire — 187 m
+- Sans nom — 188 m
+- Shinzo Pauline Furman — 188 m
+- BM SEE — 188 m
+- Le Coq Sportif — 189 m
+- Sans nom — 189 m
+- Avril — 190 m
+- Ale — 190 m
+- Chanon — 190 m
+- Tricote moi un tattoo — 191 m
+- Héroïnes — 192 m
+- & Other Stories — 193 m
+- Bobby — 193 m
+- Jetlag Voyages — 195 m
+- MVS — 195 m
+- Leho — 195 m
+- Episode — 196 m
+- La Petite Ourse — 196 m
+- Sans nom — 196 m
+- Mora — 197 m
+- Ba&sh — 197 m
+- Sans nom — 197 m
+- Momoni — 198 m
+- Athina — 198 m
+- Sam Vape — 199 m
+- Oh my cream ! — 200 m
+- Emenya — 200 m
+- Ysé — 200 m
+- Sans nom — 200 m
+- Episode — 201 m
+- Système Solere — 202 m
+- Boadicee — 203 m
+- Mokuba — 204 m
+- Bam’s Archives — 204 m
+- Sans nom — 205 m
+- Sans nom — 205 m
+- Zadig & Voltaire — 206 m
+- De Marseille et d’Ailleurs — 208 m
+- OhrVintage — 210 m
+- Le Labo — 210 m
+- Sans nom — 212 m
+- Lola Cham — 212 m
+- Aesop — 213 m
+- Sans nom — 213 m
+- Picard — 214 m
+- Bambinou — 214 m
+- Lil Weasel — 214 m
+- La French Beauty — 215 m
+- Sans nom — 215 m
+- Sans nom — 216 m
+- Souvenir machine — 216 m
+- Obey — 216 m
+- Un Amour de Lingerie — 218 m
+- Elisa & Marie — 219 m
+- Amarsi — 219 m
+- Wasted — 220 m
+- Lil Weasel — 220 m
+- Sans nom — 220 m
+- Aurelien Franck — 220 m
+- Bella Jones — 222 m
+- Sans nom — 222 m
+- Aïni — 222 m
+- BoConcept — 222 m
+- Ba&sh — 223 m
+- Jonak — 224 m
+- De Marseille et d'ailleurs — 224 m
+- Sans nom — 224 m
+- Monceau Fleurs — 225 m
+- Oris — 225 m
+- Sans nom — 226 m
+- Liao et Filles — 226 m
+- Nashi Store — 226 m
+- CBDOriginal — 227 m
+- By Raphaëlle — 227 m
+- Nat & Nin — 227 m
+- Bam’s Vintage — 227 m
 - Duke Store — 228 m
+- Bella Jones — 229 m
+- Petite Égypte — 230 m
+- Hast — 230 m
+- Le Bistro Du Forum — 230 m
+- Alatone — 230 m
+- DécoRelief — 230 m
+- Sans nom — 230 m
+- Afrim Miftary Compagny — 230 m
+- Les Trésors Pets — 231 m
+- Sans nom — 231 m
+- Scarla — 232 m
+- Joée — 232 m
+- Sans nom — 232 m
+- Sans nom — 233 m
+- Freddy's BBQ — 234 m
+- Des Petits Hauts — 234 m
+- Picaflor — 234 m
+- Flying Solo — 234 m
 - SneakersnStuff — 235 m
+- Leonie — 235 m
+- Sans nom — 235 m
+- Orta — 235 m
+- Sans nom — 236 m
 - Khara Tuki — 237 m
+- Chez maman — 237 m
+- Avenir International — 237 m
+- Sans nom — 237 m
+- Levi's — 238 m
+- Une fleur en liberté — 238 m
+- MCS — 239 m
+- Sans nom — 239 m
+- Sneakers & chill — 239 m
+- Sans nom — 240 m
+- Maison Yumi — 240 m
+- Room service — 240 m
+- Gripoix — 240 m
+- Family Affaire — 241 m
+- Jacadi — 241 m
+- Sans nom — 241 m
+- Osmose Shoes — 242 m
+- Sans nom — 242 m
+- Oxyde — 243 m
+- Pomrouge — 244 m
+- Sans nom — 244 m
+- Sans nom — 244 m
+- Sans nom — 245 m
+- Téo Cabanel — 245 m
+- Dutilleux & Minart — 246 m
 - Déco Relief — 247 m
+- Renatto Bene — 247 m
+- Agnès B. — 248 m
+- Smok'In — 249 m
+- Harpo — 250 m
+- Cheap Frip Vintage — 251 m
+- Zor Créations — 252 m
+- Dream shop — 253 m
+- KiWi — 253 m
+- Jack Gomme — 254 m
+- Chikako — 254 m
+- Tours 55 — 255 m
+- Sans nom — 255 m
+- The Love shop — 256 m
+- Best Mountain — 256 m
+- Sandro — 256 m
+- Angarde — 256 m
+- D.Stock — 257 m
+- Airness — 257 m
+- Sans nom — 260 m
+- Auque & Vong — 262 m
+- RATP — 262 m
+- Sex shop — 263 m
+- Totem — 263 m
+- Uni/Vere — 263 m
+- Fil 2000 — 264 m
+- Loulou de Saison — 264 m
+- Bonobo — 265 m
+- The Kooples — 265 m
+- L'histoire d'une fleur — 266 m
+- Cybertek — 266 m
+- Studio30 — 266 m
+- Gas Bijoux — 269 m
+- Sans nom — 270 m
+- Opium — 270 m
+- 2plumes — 271 m
+- Ardom — 271 m
+- Archives Léo & Ugo — 272 m
+- Papeterie du Textile — 273 m
+- By Marie — 273 m
+- Opium Sneaker Store — 274 m
+- Sans nom — 275 m
+- Maison de vacances — 275 m
+- Kipli — 276 m
+- Ylana — 276 m
+- Boutonnerie Saint-Denis — 278 m
+- Ekjo — 278 m
+- Sans nom — 278 m
+- Sans nom — 278 m
+- Colmar — 281 m
+- Sans nom — 283 m
+- Sans nom — 283 m
+- Declercq — 283 m
+- Le magasin Asphalte — 284 m
+- Sans nom — 284 m
+- Sans nom — 285 m
 - Passage du Désir — 286 m
+- Sagone — 286 m
+- MinimeLand — 286 m
+- Toba & Co — 286 m
+- Copy-Top — 287 m
+- Absolu - Isabel Garcia — 287 m
+- Carresol — 288 m
+- Sans nom — 289 m
+- Le Magasin Asphalte — 289 m
+- L'Érébus — 290 m
+- Majestic Filature — 290 m
+- Axe Mode Accessoires — 291 m
+- Sans nom — 291 m
+- Sans nom — 293 m
+- Sans nom — 293 m
+- Linksury — 294 m
+- Niki — 295 m
+- Clery Decor — 296 m
+- Vêtements Albert — 296 m
+- Diamonds Factory — 297 m
+- Léo & Ugo — 297 m
+- Lasaison — 298 m
+- Miss June — 298 m
+- Croisillon — 300 m
+- General Diff — 301 m
+- Sans nom — 302 m
+- Mes demoiselles — 302 m
+- PicMe — 302 m
+- Dahinden — 302 m
+- Cactus — 303 m
+- Eden Rose — 303 m
+- Sans nom — 304 m
+- O'CD — 305 m
+- Blandin & Delloye — 305 m
+- Lyca Mobile — 306 m
+- Sans nom — 306 m
+- Du bruit dans la Maison — 307 m
+- Sans nom — 307 m
+- Sans nom — 307 m
 - Jonas et Cie (Jean-Claude et Laurent Touboul) — 308 m
+- Grège — 308 m
+- Boy Loove Girl — 308 m
+- Retro — 308 m
+- Timberland — 309 m
+- Iro — 310 m
+- Lener Cordier — 311 m
+- Je suis à vélo — 311 m
+- Sans nom — 312 m
+- Saint James — 312 m
+- Sans nom — 312 m
+- Yohji Yamamoto exhibit — 313 m
+- Lou Andrea — 313 m
+- Sans nom — 313 m
+- J&W — 313 m
+- Bodhi Telecom — 313 m
+- NV Gallery — 314 m
+- Mille'Sens — 315 m
+- Deleeuw Guitars — 315 m
+- Exetera — 316 m
+- Vélocivette — 317 m
+- HEMA — 319 m
+- Sans nom — 319 m
+- Sans nom — 320 m
+- Paris Telecom — 320 m
+- Orange — 320 m
+- Heartless Jeans — 320 m
+- Modular Lighting Instruments — 320 m
+- Agnès B. — 322 m
+- Mn — 322 m
+- Sans nom — 322 m
+- Pierre Frey — 323 m
+- LM Lulu — 324 m
+- Vintage Mania — 326 m
+- Céres Philatélie — 326 m
+- Yoom Cat — 326 m
+- Line Up — 326 m
+- Studio Parisien — 327 m
+- Celio — 328 m
+- Sans nom — 329 m
+- Magic Custom — 329 m
+- Casal — 329 m
+- Alma Fournitures — 329 m
+- Sans nom — 329 m
+- SFT — 329 m
+- HEMA — 330 m
+- Pop-Up Store — 330 m
+- Leo Guy — 331 m
+- FitnessBoutique — 333 m
+- Manu — 333 m
+- Valege — 334 m
+- DVD 96 Toys — 334 m
+- Ixina — 334 m
+- Fischbacher 1819 — 334 m
+- La Maison Convertible — 335 m
+- Son et imge Vintage store — 335 m
+- Cinna — 335 m
+- Pemlab — 336 m
+- Johanna — 336 m
+- Sous le Parasol — 337 m
+- Finsbury — 337 m
+- Bonpoint — 337 m
+- Maille Love — 337 m
+- Pop mart — 338 m
+- Opulence — 338 m
+- Vannoise Accestorie — 338 m
+- JAB — 338 m
+- Été comme Hiver By A. Marciano — 338 m
+- Poupée de Soie — 338 m
+- Sans nom — 339 m
+- Lacoste — 339 m
+- Gap — 339 m
+- Sans nom — 340 m
+- Décorateur PINTO — 340 m
+- Veneta Cucine — 341 m
+- Sans nom — 342 m
+- Uptown — 342 m
+- Diego — 342 m
+- Sans nom — 342 m
+- Atsuko Paris — 343 m
+- Quadro — 343 m
+- Sans nom — 343 m
+- Orpel — 343 m
+- Edmond Petit — 344 m
+- Cuisinella — 345 m
+- Jemtex — 346 m
+- H&M — 347 m
+- Sans nom — 348 m
+- Sans nom — 348 m
+- Free For Humanity — 348 m
+- Victoria Secret — 349 m
+- My little Princess — 349 m
+- Sans nom — 349 m
+- Devred — 349 m
+- Anny’s Cadeaux — 350 m
+- Shop 117 — 350 m
+- Sans nom — 350 m
+- Toscane et tradition — 350 m
+- Collection Mariage — 351 m
+- Du Bruit dans la Cuisine — 352 m
+- Alatone — 352 m
+- Natasha — 352 m
+- Alexandre Laurent- Unichic — 352 m
+- Sans nom — 353 m
+- Sans nom — 354 m
+- Onyxo — 354 m
+- Etam — 354 m
+- MAC Cosmetics — 355 m
+- Sans nom — 355 m
+- L'écrit du Regard — 355 m
+- AuditionSanté — 356 m
+- Boutique AMPM — 356 m
+- Scarlet Roos — 356 m
+- Veneta Cucine — 357 m
+- Claudie Pierlot — 357 m
+- Sans nom — 358 m
+- Rouxel — 358 m
+- Stock Griffes — 359 m
+- Elia — 360 m
+- Chaussvres Adiev — 360 m
+- Sonitis — 361 m
+- Ethniks — 362 m
+- Sans nom — 362 m
+- Zoom Flight Paris — 363 m
+- Design et Nature — 363 m
+- Sans nom — 364 m
+- Lady Wood & Mr Wood — 364 m
+- Kave Home — 365 m
+- Sans nom — 365 m
+- Sans nom — 365 m
 - Le Phénix — 367 m
+- Isadora — 367 m
+- KIKO Milano — 367 m
+- Poltronesofà — 368 m
+- Sandro — 368 m
+- ADC Vendôme — 368 m
+- Convertible Center — 369 m
+- Promod — 369 m
+- Jules — 370 m
+- Opullence — 370 m
+- E. Dehillerin — 371 m
+- Elmo — 371 m
+- Lovisa — 371 m
+- Mango — 371 m
+- Schmidt — 372 m
+- 64 Cléry — 372 m
+- Debo Câlins — 372 m
+- Copy-Top — 373 m
+- Claudie Pierlot — 373 m
+- Kink Study — 373 m
+- Lelievre — 373 m
+- Le Fief — 374 m
+- Casamance — 374 m
 - Devialet — 375 m
+- Bérengère Leroy — 375 m
+- Sans nom — 375 m
+- Decoplus Parquets — 376 m
+- Le Lit — 376 m
+- Tropico homme — 377 m
+- Casamance — 377 m
+- Sensory — 377 m
 - Sans nom — 378 m
+- Nocibé — 378 m
+- Nevada Love — 379 m
+- So Tissus — 379 m
+- Cabinet Mode — 380 m
+- Services Tickets RATP (Les Halles) — 380 m
+- L'univers du 2 Roues — 381 m
+- Socolatex — 381 m
+- Okaïdi — 381 m
+- Flipside — 382 m
+- Tropico — 383 m
+- Kravet — 383 m
+- 26N — 383 m
+- Les Étoffes — 383 m
+- Clement Design — 385 m
+- Adidas Originals — 385 m
+- Intersport — 386 m
+- Le Cent Un — 386 m
+- Draeger — 386 m
+- Smeg — 387 m
+- Vestibule — 387 m
+- Royal Tissu — 387 m
+- Kick Café - Concept Store K-Pop — 388 m
+- Undiz — 388 m
+- Sans nom — 389 m
+- Cloanice — 389 m
+- Ruty — 390 m
+- Capitole Café - Brasserie — 391 m
+- Paris Sexy — 391 m
+- Le Showroom Sentier — 391 m
+- Haque Telecom — 392 m
+- Rayon d’or — 392 m
+- Sans nom — 392 m
+- Giltex — 393 m
+- Bike+ Paris Les Halles — 394 m
+- Miss Tic — 394 m
+- Rituals — 394 m
+- Fried Frères — 395 m
+- Sans nom — 396 m
+- Fabbabes — 396 m
+- Pronovias — 396 m
+- Vimoda — 396 m
+- Forum des Halles — 396 m
+- Allo Vélo — 397 m
+- Sans nom — 397 m
+- Coyote mag Store — 397 m
+- Atelier Beaumarchais — 398 m
+- F vintage — 398 m
+- Sans nom — 399 m
+- Tissus Triana — 399 m
+- Beauty Bazar — 399 m
+- Ethniks — 399 m
 - Tikamoon — 400 m
+- Sans nom — 400 m
+- www.victoires.com — 400 m
+- Sans nom — 400 m
+- Égérie — 400 m
+- Jane Wood — 400 m
+- Moleskine — 400 m
+- Bexley — 401 m
+- Sephora — 401 m
+- Remix Line — 402 m
+- Sans nom — 402 m
+- Parfois — 402 m
+- Orza — 403 m
+- Hartford — 403 m
+- Aroma-Zone — 403 m
+- Sans nom — 404 m
+- Margot — 404 m
+- Kahl — 404 m
+- H&M — 405 m
+- Charles Burger — 405 m
+- Sans nom — 406 m
+- Maison Duchénoy — 406 m
+- Bershka — 406 m
+- Lead — 406 m
+- Sans nom — 407 m
+- Tessy — 407 m
+- MOA — 407 m
+- iPhoneCassé.fr — 408 m
+- Filagil — 408 m
+- Draeger — 408 m
+- Sans nom — 409 m
+- Savage Couture — 409 m
+- Sans nom — 409 m
+- Micromania — 409 m
+- Johanna — 409 m
+- Sotexpro — 410 m
+- Sans nom — 410 m
+- Capricine — 411 m
+- Tempka — 411 m
+- Westfield Forum des Halles — 411 m
+- Venise — 411 m
+- AD9 — 412 m
+- FDM — 412 m
+- Lovisa — 412 m
+- Son et Image Vintage store — 413 m
+- Boutique Tréca Place des Victoires — 413 m
+- Cordonnier Serrurier — 413 m
+- Sans nom — 413 m
+- Les bains Guerbois — 414 m
+- Sans nom — 415 m
+- Atol Audition — 416 m
+- Biotech USA — 416 m
+- Sans nom — 417 m
+- Sans nom — 417 m
+- Toiles de Mayenne — 417 m
+- Gardenz Alexandrie – CBD Shop Paris 02 — 417 m
+- Romo — 418 m
+- Sans nom — 419 m
+- Aida — 419 m
+- Dr. Martens — 420 m
+- M Avenir — 420 m
+- La Mécanique Du Pull — 420 m
+- Foot Locker — 421 m
+- Designers guild — 421 m
+- Sans nom — 421 m
 - Au Réparateur de Bicyclettes — 422 m
+- Celio Meubles — 422 m
+- Muji — 422 m
+- Sans nom — 422 m
 - Miss Papillon — 424 m
+- Pentagramme — 424 m
+- Fifilles Paris — 424 m
+- Levi's — 425 m
+- Paris By Bike — 425 m
+- Sans nom — 425 m
+- Guichet Transilien — 425 m
+- La Maison Bineau — 425 m
+- Comptoir Monin — 425 m
+- Yves Rocher — 426 m
+- Aleph — 426 m
+- Sans nom — 426 m
+- Sans nom — 427 m
+- La Boutique Campüs — 427 m
+- Roche Bobois — 428 m
+- Yves Rocher — 428 m
+- Chez Serge — 428 m
+- Juicy — 428 m
+- Pearl — 429 m
+- Vintage store — 429 m
+- Le Singe de Julie — 429 m
+- Chic & Migonne — 429 m
+- Ijo — 429 m
+- SFR — 430 m
+- Concord — 430 m
+- Tai Ping — 430 m
+- Serrurerie du Caire — 430 m
+- Venise — 430 m
+- Sans nom — 431 m
+- Hervé Chatelain — 431 m
+- Atmos Arena — 431 m
+- Sans nom — 432 m
+- Pierre Augustin Rose — 432 m
+- My Velo — 433 m
+- La boutique les bains — 433 m
+- Photomaton — 433 m
 - Copyprint — 434 m
+- Eva Diffusion — 434 m
+- Anne Jacquemin Sablon — 434 m
+- TissuMarket — 434 m
+- Promod — 435 m
+- Jeanus — 436 m
+- Condorse — 436 m
+- Celio — 436 m
+- Go2roues.com — 437 m
+- Flying Tiger Copenhagen — 437 m
+- Diamond for Eden — 437 m
+- Lyca Mobile — 437 m
+- Sans nom — 438 m
+- Thelma Fewo — 438 m
+- Sans nom — 439 m
+- Sans nom — 439 m
+- Bimodal Réaumur Sebastopol — 440 m
+- Stradivarius — 441 m
+- Jules — 441 m
+- Sandrine Philippe — 441 m
+- Sans nom — 442 m
+- Pétrone — 442 m
+- Miss coquines — 442 m
+- Sans nom — 442 m
+- Sans nom — 442 m
+- ZW Fashion — 442 m
+- Darty — 442 m
+- Gérard Darel — 443 m
+- Baidou — 443 m
+- Le kasha — 443 m
+- New Rallye — 443 m
+- La maison de l'homme — 444 m
+- Jennyfer — 444 m
+- Sunny Studio — 444 m
+- Sans nom — 444 m
+- Victoire — 444 m
+- Big Shop - L'univers de bébé — 445 m
+- La Plateforme du Bâtiment — 446 m
+- SoCoo'c — 446 m
+- Grenouilles du marais — 446 m
+- Gérard Darel — 447 m
+- El Paso Booty — 447 m
+- Love Shop — 447 m
+- Tamaris — 447 m
+- Mateky — 447 m
+- Sud Express — 448 m
+- Sans nom — 448 m
+- Doc' Biker — 450 m
+- Pull & Bear — 450 m
+- Le Nid – Cocon Ludique — 451 m
+- Footkorner — 451 m
+- Croizéart — 451 m
+- Glowstation — 451 m
 - Panafrica — 452 m
 - Au Cœur Immaculé de Marie — 452 m
+- MBL — 452 m
+- Shoesissime — 452 m
+- Welcome to Paris — 452 m
+- Lins — 452 m
+- L'Occitane — 453 m
+- Sans nom — 453 m
+- Malouinières — 453 m
+- Bleu Libellule — 453 m
+- Fnac — 453 m
+- Bulles en Boite — 454 m
+- Zara — 454 m
 - Fnac — 455 m
+- Warhammer — 455 m
+- Jonak — 455 m
+- El badia — 455 m
+- Epeda — 455 m
+- Picard Serrures — 456 m
+- Original — 456 m
+- Quickstrike — 457 m
+- Lego — 457 m
+- Adopt' — 457 m
+- Univers de Léo — 457 m
+- Mode Pole — 458 m
+- Jonak — 459 m
+- Popus Editions — 459 m
+- Lyca — 459 m
+- Librairie Rosicrucienne — 460 m
+- Afro-Naturel CrazyPouss — 460 m
+- Heytens — 460 m
+- Yves Rocher — 460 m
+- Ligne Roset — 461 m
+- Atelier Pablo — 462 m
+- Origo — 463 m
+- New Balance — 463 m
+- Joaillerie Zeina Paris Victoires — 464 m
+- Maison Sarah Lavoine — 465 m
+- Bolia — 465 m
+- Swapfiets — 465 m
+- Sophie Mallebranche — 465 m
+- Beauty Success — 466 m
+- Sans nom — 466 m
+- Custom Paradise — 467 m
+- Sans nom — 467 m
+- Sézane- L’atelier — 468 m
+- Pourchet — 468 m
+- Frames & Design — 468 m
+- Corizzi — 468 m
+- RP PARIS — 469 m
+- La Banque de l'Image — 469 m
 - Or du Monde — 470 m
+- Cam One — 470 m
+- Sans nom — 470 m
+- Misaki iinuma - のコピ — 470 m
+- The Art Cycle — 470 m
+- La Pieuvre — 470 m
+- Kimya — 471 m
+- Verrerie des Halles — 471 m
+- Paradise — 471 m
+- Buby.s - Baya — 471 m
+- The Good Club — 472 m
+- Daisy — 472 m
+- Sans nom — 473 m
+- Monnier — 474 m
+- Paris Fashion — 475 m
+- Sans nom — 475 m
+- Grâce & Mila — 476 m
+- Jus d'Orange — 477 m
+- Sissor — 478 m
+- CrazyPouss — 478 m
+- Sans nom — 478 m
+- Sans nom — 478 m
+- Søstrene Grene — 478 m
+- Pinault Collection — 479 m
+- Sans nom — 479 m
 - ZXSBN6DD3VZBGSY — 480 m
 - Foot Locker — 480 m
+- Sans nom — 480 m
+- Sunrise — 480 m
+- Hippy Market — 481 m
+- Lauriele — 481 m
+- Afro naturel — 482 m
+- Sans nom — 482 m
+- Aimie — 483 m
+- Aroma cbd shop — 483 m
 - Bistrot Du Jardin — 484 m
+- Letmeknow — 484 m
+- Olow — 484 m
+- L'Onkel — 484 m
 - C'est Deux Euros — 485 m
+- Sans nom — 485 m
+- Sans nom — 485 m
+- Sans nom — 485 m
+- Nike — 485 m
+- Outlet leather market — 486 m
+- Forever Paris — 486 m
+- Fleuron — 486 m
+- Biscote — 489 m
+- Canal BD - Librairie Super Héros — 490 m
+- L'extrême Contemporain — 490 m
+- Who we are — 490 m
+- Jakar Paris — 491 m
+- Sans nom — 492 m
+- Sulvam — 492 m
+- Relay — 492 m
+- Boxxman — 493 m
+- Fripouilles — 493 m
+- René Talmon l’Armée — 494 m
+- Christina — 494 m
+- SR Fournitures — 494 m
+- Sans nom — 494 m
+- Lönnberg — 495 m
+- Sans nom — 496 m
 - Starcow — 497 m
+- Geberit — 498 m
+- Stéphane Poncelet — 499 m
+- Thair 59 — 499 m
+- Anja Rock — 499 m
+- Sans nom — 499 m
+- Window France — 500 m
+- Radiomarais — 500 m
+- Linéa Carrelage — 500 m
+- Huarenjie — 500 m
+- Aubade CMR — 500 m
+- Foot Locker — 500 m
+- L'écritoire — 500 m
+- Éléphant — 500 m
 ### Sante
+- Aprium Pharmacie Montorgueil — 40 m
+- Pharmacie du Marché Montorgueil — 52 m
+- Pharmacie Moderne du Sentier — 126 m
+- Pharmacie de la Poste — 157 m
 - Pharmacie Saint-Eustache — 171 m
+- Apotek — 264 m
 - Pharmacie Mutualiste — 303 m
+- Pharma Best — 350 m
 - Pharmacie Louvre Victoire — 372 m
 - Pharmacie Canonne Réaumur — 400 m
+- Pharmacie du Sentier — 422 m
 ### Education
+- crèche 44 Greneta — 113 m
+- École dentaire francaise — 130 m
+- Halte-Garderie — 137 m
+- École maternelle Dussoubs — 148 m
+- École Primaire Catholique Mixte Saint-Sauveur — 149 m
+- Sans nom — 156 m
+- Elfe Ecole de Langue Francaise — 194 m
+- Collège de Paris — 194 m
 - Collège César-Franck — 209 m
 - École Primaire — 225 m
+- CFA de la Bijouterie Joaillerie — 254 m
+- People & Baby — 288 m
+- Crèche collective municipale 132 rue Rambuteau — 293 m
+- École élémentaire Dussoubs — 303 m
+- École Maternelle — 337 m
+- Institut du Management de l'Information - UTC — 387 m
+- École Supérieure d'Art Dramatique de Paris — 389 m
+- École Montessori bilingue Papin — 407 m
+- Ecole St Martin — 423 m
+- École primaire Beauregard — 428 m
+- L'École Multimedia — 434 m
+- Groupe Scolaire Beauregard — 440 m
+- École Maternelle — 444 m
+- L'École Multimédia — 455 m
+- École de la Chambre Syndicale de la Couture Parisienne — 462 m
+- Crescendo — 469 m
+- Crèche Municipale — 490 m
+- Halte-garderie municipale des Prouvaires — 500 m
 ### Transport
 - Étienne Marcel - Montmartre — 142 m
+- Rue des Petits Carreaux — 183 m
 - Turbigo - Étienne Marcel — 202 m
 - Turbigo - Étienne Marcel — 208 m
 - Sentier — 209 m
 - Étienne Marcel - Montmartre — 210 m
+- Étienne Marcel — 238 m
 - Louvre - Étienne Marcel — 240 m
 - Rue de Turbigo — 251 m
+- Rue du Sentier — 254 m
+- Sentier — 256 m
 - Rue Saint-Denis — 271 m
 - Louvre - Étienne Marcel — 277 m
 - Réaumur - Sébastopol — 291 m
+- Rue Montorgueil — 308 m
 - Porte Saint-Eustache — 314 m
+- Réaumur - Montmartre — 326 m
+- Porte Rambuteau — 329 m
+- Porte Rambuteau — 331 m
 - Porte Rambuteau — 333 m
 - Réaumur - Montmartre — 336 m
 - Louvre - Étienne Marcel — 336 m
 - Sébastopol - Étienne Marcel — 343 m
+- Les Halles — 358 m
+- Porte du Jour — 358 m
+- Turbigo - Étienne Marcel — 364 m
+- Porte Saint-Eustache — 367 m
+- Réaumur - Sébastopol — 382 m
+- Rue Réaumur — 384 m
 - Victoires — 385 m
+- Boulevard de Sébastopol — 387 m
+- Rue Réaumur — 388 m
+- Réaumur - Sébastopol — 409 m
 - Sans nom — 413 m
 - Sébastopol - Étienne Marcel — 416 m
+- Porte Lescot — 420 m
+- Porte Lescot — 421 m
+- Porte du Louvre — 422 m
+- Réaumur - Sébastopol — 431 m
+- Réaumur - Montmartre — 433 m
+- Châtelet - Les Halles — 440 m
+- Bourse de Commerce — 444 m
 - Porte Lescot — 445 m
+- Porte du Louvre — 450 m
+- Bourse de Commerce — 457 m
+- Porte du Pont Neuf — 461 m
+- Porte Berger — 472 m
+- Porte Berger — 474 m
 - Victoires — 483 m
 - Square Émile Chautemps — 490 m
 ### Bureaux
+- Groupe Franklin — 35 m
+- myCowork — 65 m
+- Village Montorgueil — 74 m
+- La Clairière — 86 m
+- Sans nom — 91 m
+- Paris et Ailleurs — 98 m
+- Let it bee — 99 m
+- Courtage assurance — 100 m
+- Interior's — 104 m
+- VivaSon — 118 m
+- CGT — 121 m
+- Yakart — 122 m
+- Paris et Ailleurs — 130 m
+- Groupe Brandon — 144 m
+- DM Media — 149 m
+- Puma — 149 m
+- Laforêt — 154 m
+- Babel — 158 m
+- Habiter Investir.com — 171 m
+- ULYS Immobilier — 176 m
+- Architectes — 177 m
+- BlackLimousines Paris — 177 m
+- Section territoriale de voirie STV Centre — 179 m
+- PIIC — 184 m
+- Deskeo — 187 m
+- Fortis immo — 196 m
+- Skyrock — 198 m
+- Fédération nationale de l'enseignement privé — 209 m
+- Architectes Singuliers — 214 m
+- Saint-Sauveur immobilier — 220 m
+- Eyedoll — 221 m
+- Notaires 3 Turbigo — 223 m
+- Direction Régionale des Finances Publiques d'Île-de-France et de Paris - Site Réaumur — 244 m
+- Priceminister.com / rakuten.fr — 245 m
+- Les Beaux Quartiers — 245 m
+- Fredélion — 251 m
 - La maison de l'immobilier — 262 m
+- CFA Insta — 263 m
+- Mon atelier en ville — 264 m
+- Spaces — 271 m
+- Espace Clery — 277 m
+- By Zmirov — 281 m
+- Architectures Paris — 282 m
+- Sans nom — 289 m
+- Climate House — 290 m
+- 50 partners — 293 m
+- BDF Gestion — 299 m
+- Banque de France - Direction générale des Statistiques — 300 m
+- Corporatings — 301 m
+- YouStock Paris — 301 m
+- World Skills France — 302 m
+- Melvin & Hamilton — 305 m
+- Argellies RP — 307 m
+- Arolla — 316 m
+- Bad & Partners — 317 m
+- Phast — 318 m
+- Hugging Face — 319 m
+- Partech Shaker — 325 m
+- AXM — 330 m
+- En Mode Finance — 336 m
+- Luxurynsight — 343 m
+- ISR26 — 346 m
+- All4home — 346 m
+- Métamicro — 349 m
+- Lamy — 350 m
+- Spaces — 353 m
+- Bel Air Media — 356 m
+- Françoise Le Barbier — 357 m
+- L:a Bruket — 358 m
+- Samsic emploi — 367 m
+- Manpower — 367 m
+- Click your flat — 368 m
+- Cabinet Picquart — 368 m
+- Liberté Living Lab — 369 m
+- Samsic Emploi — 370 m
+- Liberté Living-Lab — 371 m
+- Sicasov — 373 m
+- Pôle Emploi — 374 m
+- Mary’s Home Immobilier — 375 m
+- An’ge — 378 m
+- YouScribe — 384 m
+- Fortis immo — 387 m
+- Chefsquare — 390 m
+- RetailMeNot — 401 m
+- JS Bill — 402 m
+- Stanley Robotics — 402 m
+- Espace Coq Heron — 403 m
+- 01 Net — 409 m
+- PlasmaSoft — 410 m
+- Croix Rouge Française — 413 m
+- Urban Flat — 417 m
+- Keleops — 419 m
+- Multiburo — 423 m
+- Direction Régionale des Finances Publiques d'Île-de-France et de Paris - Site Notre-Dame des Victoires — 425 m
+- Sans nom — 429 m
+- La Mae — 430 m
+- Deskeo — 432 m
+- Sans nom — 433 m
+- Denodo Paris — 433 m
+- Ambassade du Mexique — 442 m
+- CCI Paris — 448 m
+- Crédit Logement — 450 m
+- A part of Paris — 454 m
+- afr financement — 455 m
+- Espace Saint Martin — 459 m
+- Espace Vinci - Groupe Formeret — 462 m
+- Vivre à Paris — 466 m
+- Epoka — 466 m
+- SOMDIAA — 474 m
+- Le 10h10 — 476 m
+- Société Nouvelle Briant — 481 m
+- Gerico France — 484 m
+- CIEPS — 485 m
+- Revevol — 488 m
+- Willa — 490 m
+- I Wheel Share — 490 m
+- Le Lys Bleu Editions — 490 m
+- Come over — 491 m
+- Paul Gabet — 491 m
+- Paris Home Immobilier — 492 m
 - Centre National d'Études Spatiales — 495 m
+- Sygna Partners — 496 m
+- Centre d’action sociale Paris Centre — 496 m
+- OCSI — 497 m
+- Spaces — 499 m
+- Mapei world Paris — 499 m
+- Opco Ep — 499 m
 ### Loisirs_culture
+- Baba — 131 m
+- Sputnik Yoga Space — 132 m
+- Centre Sportif Jean Dame — 177 m
+- The Gravity Studio — 201 m
+- Riise — 204 m
+- Neoness — 214 m
+- Yuj - Yoga Studio — 247 m
+- KeepCool — 293 m
+- Kore Studio — 315 m
+- Médiathèque musicale de Paris — 338 m
+- Médiathèque de la Canopée la fontaine — 351 m
+- Forum des Images — 380 m
 - Bibliothèque du cinéma François-Truffaut — 393 m
 - Piscine Suzanne Berlioux — 395 m
+- UGC — 423 m
+- Fit Success — 451 m
+- Hundred — 497 m
+- Bibliothèque Charlotte Delbo — 500 m
 ### Hebergement
 - Hôtel Victoires Opéra — 77 m
+- Zora — 103 m
+- Hôtel Bachaumont — 168 m
 - Tiquetonne Hôtel — 219 m
+- Nestay — 274 m
+- Hôtel du Globe — 276 m
+- Le Relais des Halles — 298 m
+- Hôtel du Sentier — 301 m
+- Hôtel du Cygne — 318 m
+- Madame Rêve — 325 m
+- Résidence Forum des Halles — 333 m
 - Edgar & Achille — 382 m
 - Hôtel des Victoires — 399 m
 - Les Bains Paris — 404 m
+- Dandy — 404 m
+- Sans nom — 405 m
+- Hôtel Bellevue et du Chariot d'Or — 405 m
+- Snob Hotel by Elegancia — 411 m
+- Hôtel de Roubaix — 418 m
+- Hôtel National des Arts et Métiers — 448 m
+- Crayon — 450 m
 - Hôtel Bonne Nouvelle — 454 m
 - Hôtel Marie — 457 m
+- Citizen M — 458 m
 - Résidence les Boulevards — 470 m
+- 123 Sébastopol — 478 m
+- Nestay Les Halles — 484 m
+- Hôtel Georgette — 484 m
+- Hôtel Lucien — 494 m
+- Crayon Rouge — 497 m
 ### Stationnement
+- Sans nom — 200 m
+- Réaumur - Sentier — 208 m
+- Sans nom — 210 m
+- Sans nom — 212 m
+- Sans nom — 216 m
+- Sans nom — 221 m
+- Sans nom — 224 m
+- Sans nom — 236 m
 - Parking Turbigo - Saint-Denis — 240 m
 - Réaumur Saint-Denis — 245 m
+- Sans nom — 263 m
 - Parking Forum des Halles — 269 m
+- Indigo — 325 m
+- Sans nom — 342 m
+- Sans nom — 353 m
+- Sans nom — 389 m
+- Sans nom — 478 m
+- Sans nom — 495 m
+- Sans nom — 495 m
 ### Autre
+- Sans nom — 34 m
+- Sans nom — 70 m
+- Paris for Kids — 96 m
+- Sans nom — 104 m
+- Sans nom — 104 m
+- Sans nom — 119 m
+- Sans nom — 127 m
+- Sans nom — 127 m
+- Sans nom — 131 m
+- Sans nom — 137 m
+- Sans nom — 144 m
+- Sans nom — 147 m
+- Sans nom — 161 m
+- Sans nom — 161 m
+- Sans nom — 162 m
+- Sans nom — 165 m
+- Sans nom — 166 m
+- Sans nom — 168 m
+- Sans nom — 172 m
+- Sans nom — 175 m
+- Sans nom — 179 m
+- Sans nom — 179 m
+- Sans nom — 180 m
+- Sans nom — 182 m
+- Sans nom — 184 m
+- Sans nom — 186 m
+- Sans nom — 190 m
+- Sans nom — 200 m
+- Sans nom — 200 m
+- Sans nom — 201 m
+- Sans nom — 208 m
+- Sans nom — 209 m
+- Sans nom — 210 m
+- Sans nom — 213 m
+- Sans nom — 215 m
+- Sans nom — 219 m
+- Sans nom — 221 m
 - Sans nom — 222 m
+- Sans nom — 222 m
+- Sans nom — 224 m
+- Sans nom — 225 m
+- Sans nom — 226 m
+- Sans nom — 228 m
+- Sans nom — 229 m
+- Sans nom — 230 m
+- Sans nom — 232 m
+- Sans nom — 240 m
+- Sans nom — 241 m
+- Sans nom — 246 m
+- Sans nom — 247 m
+- Sans nom — 247 m
+- Sans nom — 247 m
+- Sans nom — 250 m
+- Sans nom — 251 m
+- Sans nom — 251 m
+- Sans nom — 253 m
+- Sans nom — 253 m
+- Sans nom — 253 m
+- Sans nom — 258 m
+- Sans nom — 259 m
+- Sans nom — 265 m
+- Sans nom — 269 m
 - Sans nom — 272 m
 - Sans nom — 278 m
+- Sans nom — 280 m
 - Sans nom — 282 m
+- Sans nom — 284 m
+- Sans nom — 286 m
+- Sans nom — 286 m
+- Sans nom — 289 m
+- Sans nom — 289 m
+- Sans nom — 290 m
+- Sans nom — 292 m
+- Sans nom — 292 m
+- Sans nom — 293 m
+- L'Atelier — 294 m
+- Sans nom — 298 m
 - Sans nom — 299 m
+- Sans nom — 301 m
+- Sans nom — 304 m
+- Sans nom — 304 m
+- Sans nom — 307 m
+- Sans nom — 308 m
+- Sans nom — 308 m
+- Sans nom — 310 m
+- Sans nom — 310 m
+- Sans nom — 311 m
+- Sans nom — 312 m
+- Sans nom — 312 m
+- Sans nom — 313 m
+- Sans nom — 313 m
+- Sans nom — 313 m
+- Sans nom — 315 m
+- Sans nom — 317 m
+- Sans nom — 320 m
+- Sans nom — 321 m
+- Sans nom — 323 m
+- Sans nom — 325 m
+- Sans nom — 325 m
+- Sans nom — 328 m
+- Sans nom — 329 m
+- Sans nom — 329 m
+- Parking du Forum — 330 m
+- Sans nom — 331 m
+- Sans nom — 331 m
+- Réaumur Saint-Denis — 331 m
+- Sans nom — 331 m
+- Sans nom — 334 m
+- Sans nom — 335 m
+- Sans nom — 340 m
+- Sans nom — 341 m
+- Sans nom — 341 m
+- Sans nom — 343 m
+- Sans nom — 344 m
+- Conservatoire à Rayonnement Régional de Paris — 344 m
+- Sans nom — 345 m
+- Sans nom — 347 m
+- Sans nom — 347 m
+- Sans nom — 348 m
+- Sans nom — 349 m
+- Sans nom — 349 m
+- Sans nom — 350 m
+- Sans nom — 352 m
 - Sans nom — 353 m
+- Sans nom — 353 m
+- Sans nom — 353 m
+- Sans nom — 355 m
+- Sans nom — 357 m
+- Sans nom — 358 m
+- Sans nom — 359 m
+- Sans nom — 359 m
+- Sans nom — 359 m
+- Sans nom — 361 m
+- Sans nom — 362 m
+- Sans nom — 365 m
+- Sans nom — 366 m
+- Sans nom — 368 m
+- Sans nom — 370 m
+- Sans nom — 372 m
+- Sans nom — 373 m
+- Sans nom — 374 m
+- Sans nom — 376 m
+- Sans nom — 376 m
+- Sans nom — 378 m
+- Sans nom — 379 m
+- Sans nom — 380 m
+- Sans nom — 380 m
+- Sans nom — 380 m
+- Sans nom — 381 m
+- Sans nom — 381 m
 - Sans nom — 385 m
+- Sans nom — 385 m
+- TUMO Paris 1 — 385 m
+- Sans nom — 388 m
+- Sans nom — 388 m
+- Accès Saint-Eustache — 389 m
+- Abri Alexandrie 02-03 — 389 m
+- Sans nom — 390 m
+- Sans nom — 391 m
+- Sans nom — 393 m
+- Sans nom — 393 m
+- Sans nom — 395 m
+- Sans nom — 395 m
+- Sans nom — 396 m
+- Best École de Musique — 398 m
+- Sans nom — 399 m
+- Sans nom — 401 m
+- Sans nom — 402 m
+- Sans nom — 403 m
+- Sans nom — 406 m
+- Sans nom — 407 m
+- Sans nom — 408 m
+- Sans nom — 409 m
+- Sans nom — 409 m
+- Sans nom — 413 m
 - Sans nom — 415 m
+- Sans nom — 415 m
+- Sans nom — 416 m
+- Sans nom — 416 m
+- Sans nom — 421 m
+- Sans nom — 422 m
+- Sans nom — 422 m
+- Sans nom — 423 m
+- Sans nom — 423 m
+- Sans nom — 424 m
+- Sans nom — 425 m
+- Sans nom — 426 m
+- Sans nom — 426 m
+- Petit Ange — 428 m
+- Sans nom — 428 m
+- Sans nom — 430 m
+- Sans nom — 433 m
+- Sans nom — 434 m
+- Sans nom — 435 m
+- Sans nom — 436 m
+- Sans nom — 436 m
+- Sans nom — 440 m
+- Sans nom — 440 m
 - Sans nom — 441 m
+- Sans nom — 441 m
+- Sans nom — 444 m
+- Sans nom — 447 m
+- Sans nom — 447 m
+- Sans nom — 447 m
+- Sans nom — 448 m
+- Sans nom — 449 m
+- Sans nom — 450 m
+- Sans nom — 454 m
 - Sans nom — 454 m
 - Sans nom — 457 m
+- Conservatoire Mozart — 458 m
+- Sans nom — 459 m
+- Sans nom — 459 m
+- Sans nom — 460 m
+- Sans nom — 460 m
 - Sans nom — 461 m
+- Sans nom — 461 m
+- Sans nom — 461 m
+- Sans nom — 461 m
+- Sans nom — 462 m
+- Sans nom — 463 m
+- Sans nom — 463 m
+- Sans nom — 463 m
+- Sans nom — 464 m
+- Sans nom — 465 m
+- Sans nom — 466 m
+- Sans nom — 466 m
+- Sans nom — 468 m
+- Sans nom — 469 m
+- Sans nom — 469 m
+- Sans nom — 469 m
+- Sans nom — 469 m
 - Saint-Martin — 471 m
+- Sans nom — 471 m
+- Sans nom — 471 m
+- Sans nom — 472 m
 - Sans nom — 473 m
+- Sans nom — 473 m
+- Sans nom — 473 m
+- Sans nom — 474 m
+- Sans nom — 475 m
+- E-Sport Stadium — 475 m
+- Sans nom — 475 m
+- Sans nom — 476 m
+- Sans nom — 477 m
+- Sans nom — 479 m
+- Sans nom — 480 m
+- Sans nom — 481 m
+- Sans nom — 481 m
+- Sans nom — 482 m
+- Sans nom — 483 m
+- Sans nom — 484 m
+- Sans nom — 484 m
+- Sans nom — 484 m
+- Sans nom — 485 m
+- Sans nom — 486 m
+- Sans nom — 486 m
+- Sans nom — 486 m
+- Sans nom — 487 m
+- Sans nom — 487 m
+- Sans nom — 487 m
+- Sans nom — 488 m
+- Sans nom — 489 m
+- Sans nom — 490 m
+- Sans nom — 490 m
+- Sans nom — 491 m
+- Sans nom — 492 m
 - Sans nom — 494 m
+- Sans nom — 494 m
+- Sans nom — 494 m
+- Sans nom — 495 m
+- Sans nom — 495 m
+- Sans nom — 495 m
+- Sans nom — 495 m
+- Sans nom — 495 m
+- Sans nom — 495 m
+- Sans nom — 497 m
+- Sans nom — 497 m
+- Sans nom — 498 m
+- Sans nom — 498 m
+- 4 — 498 m
+- Sans nom — 498 m
+- Sans nom — 499 m
+- Sans nom — 500 m
+- Sans nom — 500 m
 
 ## 6. Connectivité
-21 infrastructure(s) de transport recensée(s) : Étienne Marcel - Montmartre (142 m), Turbigo - Étienne Marcel (202 m), Turbigo - Étienne Marcel (208 m), Sentier (209 m), Étienne Marcel - Montmartre (210 m) (+16 autre(s)).
+50 infrastructure(s) de transport recensée(s) : Étienne Marcel - Montmartre (142 m), Rue des Petits Carreaux (183 m), Turbigo - Étienne Marcel (202 m), Turbigo - Étienne Marcel (208 m), Sentier (209 m) (+45 autre(s)).
 
 ## 7. Activités économiques probables
-159 établissement(s) à vocation économique recensé(s) : restauration : 85, services_personne : 23, commerce_non_alimentaire : 23, commerce_alimentaire : 12, hebergement : 8, sante : 4, bureaux : 2, loisirs_culture : 2.
+1992 établissement(s) à vocation économique recensé(s) : commerce_non_alimentaire : 829, restauration : 670, services_personne : 181, bureaux : 127, commerce_alimentaire : 126, hebergement : 30, loisirs_culture : 18, sante : 11.
 
 ## 8. Contexte territorial
 Localisation administrative : Paris, Paris, Île-de-France. L'infrastructure la plus proche du point analysé est Au Rocher de Cancale (restauration), à 2 m.
 
 ## 9. Niveau de confiance
 - Score : **90/100** (élevé)
-- Justification : coordonnées GPS présentes (+40) | géocodage réussi (+25) | 200 infrastructures trouvées (+15) | cohérence administrative complète (+10)
+- Justification : coordonnées GPS présentes (+40) | géocodage réussi (+25) | 2374 infrastructures trouvées (+15) | cohérence administrative complète (+10)
 
 ## 10. Limites de l'analyse
 - Données issues de sources publiques ouvertes uniquement (OSM, Nominatim/Géoplateforme).

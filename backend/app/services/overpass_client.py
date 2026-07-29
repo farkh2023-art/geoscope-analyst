@@ -35,9 +35,19 @@ _MOCK_INFRASTRUCTURES = [
 ]
 
 # nwr (node/way/relation) : couvre aussi les commerces et équipements cartographiés en polygone.
-# out center 200 : plafond documenté — une zone urbaine dense (centre de Paris) sature déjà
-# cette limite avec shop=* seul ; au-delà, les résultats les plus éloignés dans l'ordre de
-# réponse Overpass sont simplement absents (pas de troncature par distance côté serveur).
+# Plafond `out center` : Overpass ne trie pas par distance avant de tronquer, donc un plafond
+# trop bas ne retient pas les résultats les plus proches mais un sous-ensemble arbitraire de
+# l'ordre de réponse — un concurrent à 20 m peut être exclu alors qu'un à 400 m est retenu.
+# 200 (valeur d'origine) était déjà saturé par shop=* seul sur une rue commerçante dense
+# (constaté sur 78 Rue Montorgueil et Avenue Jean Jaurès lors de l'audit Étape 4 :
+# audits/AUDIT.md) ; le total et le compte de concurrents affichés étaient alors sous-estimés
+# de façon silencieuse. _OVERPASS_ELEMENT_CAP est fixé à une valeur qui ne sature pas pour les
+# rayons réellement utilisés (quelques centaines à ~2000 m) ; la troncature reste possible aux
+# rayons extrêmes (jusqu'à 50 km) et est alors déclarée explicitement dans `limites_analyse`
+# plutôt que masquée (voir report_generator._build_limits).
+# Nom public (pas de préfixe _) : réutilisé par report_generator pour détecter la troncature.
+OVERPASS_ELEMENT_CAP = 3000
+
 _OVERPASS_QUERY_TEMPLATE = """
 [out:json][timeout:25];
 (
@@ -49,7 +59,7 @@ _OVERPASS_QUERY_TEMPLATE = """
   nwr["highway"="bus_stop"](around:{radius},{lat},{lon});
   nwr["railway"~"station|subway_entrance|tram_stop"](around:{radius},{lat},{lon});
 );
-out center 200;
+out center """ + str(OVERPASS_ELEMENT_CAP) + """;
 """
 
 _OSM_TAG_KEYS = ("shop", "amenity", "office", "leisure", "tourism", "highway", "railway")

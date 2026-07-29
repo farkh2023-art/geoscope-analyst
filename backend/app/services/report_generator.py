@@ -5,6 +5,7 @@ from app.models.schemas import (
     LocationResult,
 )
 from app.services.infrastructure_classifier import classify_by_category
+from app.services.overpass_client import OVERPASS_ELEMENT_CAP
 
 # Catégories à vocation économique (commerce, service, bureau) — exclut transport et
 # stationnement, qui sont des générateurs de flux plutôt que des activités économiques.
@@ -165,6 +166,12 @@ def _build_limits(loc: LocationResult, infrastructures: list[Infrastructure]) ->
         limits.append("Aucune coordonnée GPS : localisation basée sur le géocodage textuel, moins précise.")
     if len(infrastructures) < 3:
         limits.append(f"{len(infrastructures)} infrastructure(s) détectée(s) : couverture OSM potentiellement incomplète dans cette zone.")
+    if len(infrastructures) >= OVERPASS_ELEMENT_CAP:
+        limits.append(
+            f"Plafond de réponse Overpass atteint ({OVERPASS_ELEMENT_CAP} éléments) : le rayon "
+            "demandé est probablement plus dense que ce plafond ne peut représenter — le nombre "
+            "réel d'infrastructures et de concurrents peut être supérieur à celui affiché."
+        )
     limits.append("Données issues de sources publiques ouvertes uniquement (OSM, Nominatim/Géoplateforme).")
     limits.append(
         "La taxonomie commerce actuelle ne collecte pas de données sur l'occupation du sol ni les "

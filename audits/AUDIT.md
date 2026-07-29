@@ -27,9 +27,11 @@ adresse à Bordeaux ? »**
 
 | Adresse | Profil | Activité | Rayon | Résultat |
 |---|---|---|---|---|
-| [78 Rue Montorgueil, Paris](78-rue-montorgueil-paris.md) | Rue commerçante parisienne très dense | `boulangerie` | 500 m | 200 infrastructures (plafond `out center 200` atteint), 2 concurrents |
-| [Avenue Jean Jaurès, Pantin](avenue-jean-jaurès-pantin.md) | Avenue de périphérie (Seine-Saint-Denis) | `coiffure` | 800 m | 200 infrastructures (plafond atteint), 9 concurrents |
+| [78 Rue Montorgueil, Paris](78-rue-montorgueil-paris.md) | Rue commerçante parisienne très dense | `boulangerie` | 500 m | 2374 infrastructures, 36 concurrents |
+| [Avenue Jean Jaurès, Pantin](avenue-jean-jaurès-pantin.md) | Avenue de périphérie (Seine-Saint-Denis) | `coiffure` | 800 m | 535 infrastructures, 13 concurrents |
 | [Place du Chatel, Provins](place-du-chatel-provins.md) | Petite ville (Seine-et-Marne, ~80 km de Paris) | `restaurant` | 500 m | 58 infrastructures, 12 concurrents |
+
+*Chiffres régénérés après correction du plafond Overpass — voir la section « Correction post-audit : plafond de réponse Overpass » plus bas. Les trois rapports liés ci-dessus reflètent la version corrigée.*
 
 Les trois adresses sont vérifiables directement sur openstreetmap.org. Exemples de noms
 cités dans les rapports et vérifiables : **Stohrer** (pâtisserie historique de 1730, 51
@@ -39,11 +41,11 @@ Rue Montorgueil), **Au Rocher de Cancale** (restaurant historique, Rue Montorgue
 Notez que Provins, bien que ressentie comme une « petite ville de province », est
 administrativement en région Île-de-France (département de Seine-et-Marne) — la
 différence entre les trois adresses n'apparaît donc pas dans le champ « région », mais
-dans les données réelles : 58 infrastructures contre 200 (plafond) pour les deux autres,
-et une composition différente (11 places de stationnement recensées à Provins contre 3 à
-Montorgueil, absence de banques dans le rayon à Provins, etc.). C'est précisément le
-point de l'audit : la différenciation vient des comptages et entités réelles, jamais
-d'une étiquette qualitative.
+dans les données réelles : 58 infrastructures à Provins contre 2374 à Montorgueil et 535 à
+Pantin, et une composition différente (11 places de stationnement recensées à Provins
+contre 19 à Montorgueil, absence de banques dans le rayon à Provins, etc.). C'est
+précisément le point de l'audit : la différenciation vient des comptages et entités
+réelles, jamais d'une étiquette qualitative.
 
 ## Test de Bordeaux : phrases supprimées ou reconstruites
 
@@ -101,10 +103,54 @@ l'affichage, avec disclosure explicite, permet au mode flash de rester un format
 allégé sans jamais faire dire au rapport un nombre différent de celui utilisé pour le
 score. Testé dans `test_flash_mode_truncates_display_but_not_counts`.
 
+## Correction post-audit : plafond de réponse Overpass
+
+**Constat.** La table « Les trois adresses » ci-dessus indiquait initialement que
+Montorgueil et Pantin avaient atteint le plafond `out center 200` de la requête Overpass
+(`scripts/audit_report.py` → `overpass_client.py`). Ce plafond n'est pas un tri par
+distance côté serveur : Overpass tronque dans l'ordre de sa réponse interne, pas par
+proximité. Un plafond atteint ne retient donc pas forcément les établissements les plus
+proches — un concurrent à 20 m pouvait être exclu alors qu'un autre à 400 m était retenu,
+et le total comme le compte de concurrents affichés étaient silencieusement sous-estimés.
+Ce constat a été relevé après l'écriture initiale de ce document, en confrontant le
+résultat à la question qui structure tout cet audit : un plafond arbitraire qui n'est
+jamais mentionné à l'utilisateur produit un chiffre qui a l'air dérivé des données, alors
+qu'il dérive surtout d'un artefact d'implémentation.
+
+**Correction.** `OVERPASS_ELEMENT_CAP` relevé de 200 à 3000 dans `overpass_client.py`
+(valeur choisie pour ne pas saturer aux rayons réellement utilisés — quelques centaines à
+~2000 m — tout en restant bornée aux rayons extrêmes autorisés par l'API, jusqu'à 50 km).
+`report_generator._build_limits` détecte désormais le cas où le plafond est malgré tout
+atteint et l'ajoute explicitement à `limites_analyse`, plutôt que de le laisser silencieux
+— sur le même principe de disclosure que la troncature du mode `flash`.
+
+**Re-vérification en ligne.** Les trois adresses ont été ré-analysées avec le plafond
+corrigé (nouveau `NOMINATIM_USER_AGENT` dédié à cette vérification, pour ne pas
+recontaminer le User-Agent de développement) :
+
+| Adresse | Avant correction | Après correction |
+|---|---|---|
+| 78 Rue Montorgueil, Paris | 200 infrastructures (plafond atteint), 2 concurrents | **2374** infrastructures, **36** concurrents |
+| Avenue Jean Jaurès, Pantin | 200 infrastructures (plafond atteint), 9 concurrents | **535** infrastructures, **13** concurrents |
+| Place du Chatel, Provins | 58 infrastructures, 12 concurrents | 58 infrastructures, 12 concurrents (inchangé — jamais capé) |
+
+Provins, qui n'avait jamais atteint l'ancien plafond, ressort inchangé au chiffre près —
+confirmation que la correction affecte bien la troncature et rien d'autre dans le
+pipeline. Les 65 tests pytest existants restent verts après la correction.
+
+**Incident rencontré pendant la re-vérification** : la première tentative de
+re-vérification a de nouveau essuyé un HTTP 406 d'overpass-api.de, cette fois déclenché
+par une rafale d'appels de diagnostic effectués avec le même User-Agent en quelques
+secondes. Résolu en espaçant les requêtes et en utilisant un User-Agent distinct pour
+cette vérification. Ceci confirme une seconde fois — indépendamment de l'incident déjà
+documenté plus haut — que la protection anti-abus du service réagit au volume/à la
+fréquence des requêtes plus qu'à leur origine déclarée.
+
 ## Ce qui n'a pas été touché (hors périmètre)
 
-- `docs/architecture.md` et `docs/roadmap.md` référencent encore l'ancienne architecture
-  et l'ancienne taxonomie (signalé aux Étapes 2 et 3, non corrigé).
-- La valeur `NOMINATIM_USER_AGENT` du `backend/.env` de développement local n'a pas été
-  modifiée (fichier gitignored, appartient à l'utilisateur) — mais l'audit démontre
-  concrètement qu'elle doit être changée avant tout usage réel.
+- `docs/architecture.md` et `docs/roadmap.md` référençaient encore l'ancienne
+  architecture et l'ancienne taxonomie (signalé aux Étapes 2, 3 et 4) — **mis à jour**
+  en aval de cet audit.
+- La valeur `NOMINATIM_USER_AGENT` du `backend/.env` de développement local a été
+  **corrigée** en aval de cet audit (`GeoScopeAnalyst/0.2.0 local-test` → valeur
+  identifiable avec contact), suite au constat empirique de blocage documenté ci-dessus.
