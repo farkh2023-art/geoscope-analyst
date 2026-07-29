@@ -1,4 +1,4 @@
-# Architecture GeoScope Analyst — v0.3.0
+# Architecture GeoScope Analyst — v0.4.0
 
 ## Vue d'ensemble
 
@@ -18,8 +18,12 @@ Entrée utilisateur
     ┌────┴────┐
     │         │
     ▼         ▼
-Nominatim  Overpass
-(geocoding) (infrastructures)
+geocoding/   Overpass
+factory.py   (infrastructures)
+(Géoplateforme
+ par défaut,
+ Nominatim ou
+ mock au choix)
     │         │
     └────┬────┘
          │
@@ -62,12 +66,23 @@ Frontend Leaflet.js
 | `models/schemas.py` | Modèles Pydantic (requêtes / réponses / carte) |
 | `services/input_detector.py` | Détection du type d'entrée |
 | `services/coordinate_parser.py` | Parsing de coordonnées multi-format |
-| `services/nominatim_client.py` | Reverse geocoding (+ mock offline) |
-| `services/overpass_client.py` | Requêtes infrastructures OSM (+ mock offline) |
+| `services/geocoding/factory.py` | Sélectionne le geocoder actif (`geoplateforme` par défaut, `nominatim`, ou `mock` en offline) |
+| `services/geocoding/geoplateforme.py` | Géocodage direct/inverse via l'API Géoplateforme (IGN) |
+| `services/geocoding/nominatim.py` | Géocodage via Nominatim/OSM (alternative) |
+| `services/geocoding/mock.py` | Données mockées (mode `OFFLINE_MODE=true` uniquement) |
+| `services/overpass_client.py` | Requêtes infrastructures OSM (taxonomie 12 catégories, + mock offline) |
 | `services/infrastructure_classifier.py` | Classification par catégorie |
-| `services/confidence_scoring.py` | Calcul du score de confiance |
-| `services/report_generator.py` | Génération du rapport territorial |
+| `services/role_classifier.py` | Rôle par infrastructure (`concurrent` / `flux` / `service` / `autre`) selon l'activité choisie |
+| `services/geo_utils.py` | Distance haversine |
+| `services/http_resilience.py` | Rate limiting client + retry (429, timeouts) sur les appels API externes |
+| `services/ttl_cache.py` | Cache en mémoire des réponses Overpass (TTL configurable) |
+| `services/confidence_scoring.py` | Calcul du score de confiance (qualité de la collecte, pas du lieu — voir `docs/scoring.md`) |
+| `services/report_generator.py` | Génération du rapport territorial — chaque phrase narrative dérive d'un comptage/distance réel (voir `audits/AUDIT.md`) |
 | `services/markdown_exporter.py` | Export Markdown du rapport |
+
+`scripts/audit_report.py` appelle cette même chaîne en forçant le mode en ligne
+(`OFFLINE_MODE=false`, `GEOCODER=geoplateforme`) pour produire les rapports d'audit de
+véracité dans `audits/`.
 
 ## Composants Frontend (`backend/app/static/`)
 
@@ -116,20 +131,42 @@ Chaque appel à `renderMap` crée un `L.layerGroup` par catégorie (`categoryLay
 
 | Mode | Sections incluses |
 |---|---|
-| `flash` | Résumé, identification, confiance, 5 infras max |
+| `flash` | Résumé, identification, confiance, 5 infras max affichées (comptages calculés sur la liste complète, troncature déclarée dans `limites_analyse`) |
 | `analyst` | + connectivité, activités économiques |
-| `full` | + occupation du sol, environnement, contexte territorial |
+| `full` | + contexte territorial |
+
+Les sections `occupation_du_sol_estimee` et `sensibilites_environnementales` du mode
+`full` ont été **supprimées à l'Étape 4** (`audits/AUDIT.md`) : la taxonomie commerce
+n'interroge plus `landuse=*` ni `waterway`/`leisure=park`/`power`, donc aucune donnée ne
+permet de les dériver honnêtement. Le renoncement est documenté dans `limites_analyse`
+plutôt que comblé par une estimation inventée.
 
 ## Catégories infrastructure & couleurs carte
 
+Taxonomie commerce (12 catégories, `infrastructure_classifier.CATEGORIES`) — couleurs
+définies dans `static/app.js` (`CAT_COLORS`) :
+
 | Catégorie | Couleur |
 |---|---|
-| transport | `#4f8ef7` bleu |
-| santé | `#f46060` rouge |
-| éducation | `#3ecf8e` vert |
-| énergie | `#f59e42` orange |
-| eau | `#22d3ee` cyan |
-| industrie | `#94a3b8` gris |
-| administratif | `#a78bfa` violet |
-| environnement | `#4ade80` vert clair |
-| autre | `#64748b` gris sombre |
+| commerce_alimentaire | `#f59e42` orange |
+| restauration | `#f46060` rouge |
+| services_personne | `#a78bfa` violet |
+| commerce_non_alimentaire | `#e879f9` magenta |
+| sante | `#3ecf8e` vert |
+| education | `#4f8ef7` bleu |
+| transport | `#22d3ee` cyan |
+| bureaux | `#94a3b8` gris |
+| loisirs_culture | `#4ade80` vert clair |
+| hebergement | `#eab308` jaune |
+| stationnement | `#64748b` gris sombre |
+| autre | `#94a3b8` gris |
+
+Chaque infrastructure porte aussi un **rôle** (`role_classifier.py`), déterminé par
+l'activité choisie par l'utilisateur — indépendant de la catégorie ci-dessus :
+
+| Rôle | Couleur | Signification |
+|---|---|---|
+| concurrent | `#f46060` rouge | Même activité que celle analysée |
+| flux | `#4f8ef7` bleu | Générateur de flux (transport, éducation, bureaux) |
+| service | `#4ade80` vert | Service de proximité, pas concurrent direct |
+| autre | `#64748b` gris | Ni concurrent, ni flux, ni service identifié |
