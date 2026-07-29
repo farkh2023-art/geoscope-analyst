@@ -2,42 +2,69 @@ import logging
 
 import httpx
 from app.core.config import settings
-from app.models.schemas import Coordinates, Infrastructure
+from app.models.schemas import Activity, Coordinates, Infrastructure
 from app.services.geo_utils import haversine_m
+from app.services.role_classifier import infer_role
 
 logger = logging.getLogger(__name__)
 
 # Coordonnées réelles vérifiées via Nominatim/Overpass, toutes à moins de 1 500 m
 # du centre mock (48.8566, 2.3522 — Hôtel de Ville / Île de la Cité, Paris).
+# Chaque entrée correspond à un tag effectivement interrogé par _OVERPASS_QUERY_TEMPLATE.
 _MOCK_INFRASTRUCTURES = [
-    Infrastructure(name="Station de métro Hôtel de Ville", type="station", category="transport", osm_tags={"railway": "station"}, lat=48.8575406, lon=2.3515397),
-    Infrastructure(name="Station de métro Châtelet", type="station", category="transport", osm_tags={"railway": "station"}, lat=48.8587782, lon=2.3474106),
-    Infrastructure(name="Châtelet – Les Halles (gare)", type="station", category="transport", osm_tags={"railway": "station"}, lat=48.8616374, lon=2.3470441),
-    Infrastructure(name="Préfecture de Police de Paris", type="police", category="administratif", osm_tags={"amenity": "police"}, lat=48.8571057, lon=2.3486990),
-    Infrastructure(name="Hôtel-Dieu de Paris", type="hospital", category="santé", osm_tags={"amenity": "hospital"}, lat=48.8546261, lon=2.3488485),
-    Infrastructure(name="Lycée Charlemagne", type="school", category="éducation", osm_tags={"amenity": "school"}, lat=48.8544752, lon=2.3607483),
-    Infrastructure(name="Université Paris 1 Panthéon-Sorbonne", type="university", category="éducation", osm_tags={"amenity": "university"}, lat=48.8470242, lon=2.3440467),
-    Infrastructure(name="Cathédrale Notre-Dame de Paris", type="place_of_worship", category="autre", osm_tags={"amenity": "place_of_worship"}, lat=48.8529371, lon=2.3500501),
-    Infrastructure(name="Square Jean XXIII", type="park", category="environnement", osm_tags={"leisure": "park"}, lat=48.8523474, lon=2.3512693),
-    Infrastructure(name="La Seine", type="river", category="eau", osm_tags={"waterway": "river"}, lat=48.8558089, lon=2.3490362),
+    Infrastructure(name="Station de métro Hôtel de Ville", type="subway_entrance", category="transport", osm_tags={"railway": "subway_entrance"}, lat=48.8575406, lon=2.3515397),
+    Infrastructure(name="Arrêt de bus Châtelet", type="bus_stop", category="transport", osm_tags={"highway": "bus_stop"}, lat=48.8577247, lon=2.3480784),
+    Infrastructure(name="Lycée Charlemagne", type="school", category="education", osm_tags={"amenity": "school"}, lat=48.8544752, lon=2.3607483),
+    Infrastructure(name="Université Paris 1 Panthéon-Sorbonne", type="university", category="education", osm_tags={"amenity": "university"}, lat=48.8470242, lon=2.3440467),
+    Infrastructure(name="Boulangerie Beaubourg", type="bakery", category="commerce_alimentaire", osm_tags={"shop": "bakery"}, lat=48.8618726, lon=2.3516408),
+    Infrastructure(name="McDonald's", type="fast_food", category="restauration", osm_tags={"amenity": "fast_food"}, lat=48.8579329, lon=2.3514870),
+    Infrastructure(name="Chez Marianne", type="restaurant", category="restauration", osm_tags={"amenity": "restaurant"}, lat=48.8577309, lon=2.3586364),
+    Infrastructure(name="Jean Claude Aubry Academy", type="hairdresser", category="services_personne", osm_tags={"shop": "hairdresser"}, lat=48.8610844, lon=2.3443462),
+    Infrastructure(name="BNP Paribas", type="bank", category="services_personne", osm_tags={"amenity": "bank"}, lat=48.8530223, lon=2.3434038),
+    Infrastructure(name="Pharmacie du Louvre", type="pharmacy", category="sante", osm_tags={"amenity": "pharmacy"}, lat=48.8621947, lon=2.3416613),
+    Infrastructure(name="LePantalon Marais", type="clothes", category="commerce_non_alimentaire", osm_tags={"shop": "clothes"}, lat=48.8565503, lon=2.3573564),
+    Infrastructure(name="Daniel Féau", type="estate_agent", category="bureaux", osm_tags={"office": "estate_agent"}, lat=48.8549424, lon=2.3624242),
+    Infrastructure(name="MK2 Beaubourg", type="cinema", category="loisirs_culture", osm_tags={"amenity": "cinema"}, lat=48.8615738, lon=2.3524143),
+    Infrastructure(name="Hôtel du Loiret", type="hotel", category="hebergement", osm_tags={"tourism": "hotel"}, lat=48.8569202, lon=2.3552931),
+    Infrastructure(name="Parking Hôtel de Ville", type="parking", category="stationnement", osm_tags={"amenity": "parking"}, lat=48.8569481, lon=2.3497138),
 ]
 
+# nwr (node/way/relation) : couvre aussi les commerces et équipements cartographiés en polygone.
+# out center 200 : plafond documenté — une zone urbaine dense (centre de Paris) sature déjà
+# cette limite avec shop=* seul ; au-delà, les résultats les plus éloignés dans l'ordre de
+# réponse Overpass sont simplement absents (pas de troncature par distance côté serveur).
 _OVERPASS_QUERY_TEMPLATE = """
 [out:json][timeout:25];
 (
-  node["amenity"~"hospital|clinic|school|university|college|townhall|fire_station|police"](around:{radius},{lat},{lon});
-  node["railway"~"station|halt|tram_stop"](around:{radius},{lat},{lon});
-  node["aeroway"~"aerodrome|airport"](around:{radius},{lat},{lon});
-  node["power"~"plant|generator|substation"](around:{radius},{lat},{lon});
-  way["landuse"~"industrial|military|commercial"](around:{radius},{lat},{lon});
-  way["leisure"~"park|nature_reserve|garden"](around:{radius},{lat},{lon});
-  way["waterway"~"river|canal"](around:{radius},{lat},{lon});
+  nwr["shop"](around:{radius},{lat},{lon});
+  nwr["amenity"~"restaurant|fast_food|cafe|bar|pub|pharmacy|bank|post_office|cinema|library|school|kindergarten|college|university|parking|bus_station"](around:{radius},{lat},{lon});
+  nwr["office"](around:{radius},{lat},{lon});
+  nwr["leisure"~"fitness_centre|sports_centre"](around:{radius},{lat},{lon});
+  nwr["tourism"~"hotel|guest_house"](around:{radius},{lat},{lon});
+  nwr["highway"="bus_stop"](around:{radius},{lat},{lon});
+  nwr["railway"~"station|subway_entrance|tram_stop"](around:{radius},{lat},{lon});
 );
-out center 40;
+out center 200;
 """
 
+_OSM_TAG_KEYS = ("shop", "amenity", "office", "leisure", "tourism", "highway", "railway")
 
-async def fetch_infrastructures(coords: Coordinates, radius_m: int) -> list[Infrastructure]:
+_FOOD_SHOPS = {
+    "bakery", "pastry", "butcher", "greengrocer", "convenience", "supermarket",
+    "cheese", "seafood", "deli", "wine", "alcohol", "confectionery", "chocolate",
+    "farm", "coffee", "tea",
+}
+_PERSONAL_SERVICE_SHOPS = {
+    "hairdresser", "beauty", "massage", "tattoo", "dry_cleaning", "laundry",
+    "tailor", "funeral_directors", "optician",
+}
+
+
+async def fetch_infrastructures(
+    coords: Coordinates,
+    radius_m: int,
+    activity: Activity | None = None,
+) -> list[Infrastructure]:
     if settings.offline_mode:
         candidates = list(_MOCK_INFRASTRUCTURES)
     else:
@@ -54,10 +81,15 @@ async def fetch_infrastructures(coords: Coordinates, radius_m: int) -> list[Infr
         except (httpx.TimeoutException, httpx.HTTPStatusError, httpx.RequestError):
             return []
 
-    return _with_distances(candidates, coords, radius_m)
+    return _finalize(candidates, coords, radius_m, activity)
 
 
-def _with_distances(infrastructures: list[Infrastructure], coords: Coordinates, radius_m: int) -> list[Infrastructure]:
+def _finalize(
+    infrastructures: list[Infrastructure],
+    coords: Coordinates,
+    radius_m: int,
+    activity: Activity | None,
+) -> list[Infrastructure]:
     results: list[Infrastructure] = []
     for infra in infrastructures:
         if infra.lat is None or infra.lon is None:
@@ -65,7 +97,8 @@ def _with_distances(infrastructures: list[Infrastructure], coords: Coordinates, 
         distance = round(haversine_m(coords.lat, coords.lon, infra.lat, infra.lon))
         if distance > radius_m:
             continue
-        results.append(infra.model_copy(update={"distance_m": distance}))
+        role = infer_role(infra.osm_tags, infra.category, activity)
+        results.append(infra.model_copy(update={"distance_m": distance, "role": role}))
     results.sort(key=lambda i: i.distance_m)
     return results
 
@@ -87,7 +120,7 @@ def _parse_elements(elements: list[dict]) -> list[Infrastructure]:
             name=name,
             type=infra_type,
             category=category,
-            osm_tags={k: v for k, v in tags.items() if k in ("highway", "railway", "amenity", "landuse", "leisure", "waterway", "power", "aeroway")},
+            osm_tags={k: v for k, v in tags.items() if k in _OSM_TAG_KEYS},
             lat=lat,
             lon=lon,
         ))
@@ -108,30 +141,49 @@ def _extract_coords(el: dict) -> tuple[float | None, float | None]:
 
 
 def _infer_type(tags: dict) -> str:
-    for key in ("amenity", "highway", "railway", "landuse", "leisure", "waterway", "power", "aeroway"):
+    for key in _OSM_TAG_KEYS:
         if key in tags:
             return tags[key]
     return "unknown"
 
 
 def _infer_category(tags: dict) -> str:
-    amenity = tags.get("amenity", "")
-    if amenity in ("hospital", "clinic", "doctors"):
-        return "santé"
-    if amenity in ("school", "university", "college"):
-        return "éducation"
-    if amenity in ("townhall", "police", "fire_station", "courthouse"):
-        return "administratif"
-    if "railway" in tags or tags.get("highway") in ("motorway", "trunk", "primary", "secondary"):
+    shop = tags.get("shop")
+    amenity = tags.get("amenity")
+    office = tags.get("office")
+    leisure = tags.get("leisure")
+    tourism = tags.get("tourism")
+    highway = tags.get("highway")
+    railway = tags.get("railway")
+
+    if shop:
+        if shop in _FOOD_SHOPS:
+            return "commerce_alimentaire"
+        if shop in _PERSONAL_SERVICE_SHOPS:
+            return "services_personne"
+        return "commerce_non_alimentaire"
+    if amenity in ("restaurant", "fast_food", "cafe", "bar", "pub"):
+        return "restauration"
+    if amenity in ("bank", "post_office"):
+        return "services_personne"
+    if amenity == "pharmacy":
+        return "sante"
+    if amenity in ("school", "kindergarten", "college", "university"):
+        return "education"
+    if amenity in ("cinema", "library"):
+        return "loisirs_culture"
+    if amenity == "parking":
+        return "stationnement"
+    if amenity == "bus_station":
         return "transport"
-    if "aeroway" in tags:
+    if office:
+        return "bureaux"
+    if leisure in ("fitness_centre", "sports_centre"):
+        return "loisirs_culture"
+    if tourism in ("hotel", "guest_house"):
+        return "hebergement"
+    if highway == "bus_stop":
         return "transport"
-    if tags.get("landuse") == "industrial":
-        return "industrie"
-    if "leisure" in tags:
-        return "environnement"
-    if "waterway" in tags:
-        return "eau"
-    if "power" in tags:
-        return "énergie"
+    if railway in ("station", "subway_entrance", "tram_stop"):
+        return "transport"
     return "autre"

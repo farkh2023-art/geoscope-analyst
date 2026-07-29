@@ -19,10 +19,21 @@ class InputType(str, Enum):
     unknown = "unknown"
 
 
+class Activity(str, Enum):
+    restaurant = "restaurant"
+    boulangerie = "boulangerie"
+    coiffure = "coiffure"
+    boutique = "boutique"
+    pharmacie = "pharmacie"
+    cabinet = "cabinet"
+    autre = "autre"
+
+
 class AnalyzeRequest(BaseModel):
     input: str = Field(..., description="GPS coords, URL, place name or free text")
     radius_m: int = Field(default=1500, ge=100, le=50000)
     mode: AnalysisMode = AnalysisMode.analyst
+    activity: Activity | None = None
 
 
 class Coordinates(BaseModel):
@@ -56,6 +67,7 @@ class Infrastructure(BaseModel):
     lat: float | None = None
     lon: float | None = None
     distance_m: int | None = None
+    role: str = "autre"  # "concurrent" | "flux" | "service" | "autre"
 
 
 class ReportSection(BaseModel):

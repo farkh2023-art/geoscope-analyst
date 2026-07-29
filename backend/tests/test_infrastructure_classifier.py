@@ -7,12 +7,12 @@ def _make(cat: str) -> Infrastructure:
 
 
 def test_classify_groups_correctly():
-    infras = [_make("transport"), _make("transport"), _make("santé"), _make("eau")]
+    infras = [_make("transport"), _make("transport"), _make("sante"), _make("bureaux")]
     grouped = classify_by_category(infras)
     assert len(grouped["transport"]) == 2
-    assert len(grouped["santé"]) == 1
-    assert len(grouped["eau"]) == 1
-    assert len(grouped["éducation"]) == 0
+    assert len(grouped["sante"]) == 1
+    assert len(grouped["bureaux"]) == 1
+    assert len(grouped["education"]) == 0
 
 
 def test_unknown_category_goes_to_autre():
@@ -22,11 +22,11 @@ def test_unknown_category_goes_to_autre():
 
 
 def test_summarize_returns_only_present():
-    infras = [_make("transport"), _make("énergie")]
+    infras = [_make("transport"), _make("bureaux")]
     present = summarize_categories(infras)
     assert "transport" in present
-    assert "énergie" in present
-    assert "santé" not in present
+    assert "bureaux" in present
+    assert "sante" not in present
 
 
 def test_empty_input():

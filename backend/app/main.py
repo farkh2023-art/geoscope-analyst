@@ -73,10 +73,16 @@ async def analyze(req: AnalyzeRequest):
 
     location.input_type = input_type
 
+    if req.activity is None:
+        warnings.append(
+            "Aucune activité sélectionnée : les concurrents ne peuvent pas être identifiés "
+            "(rôle « concurrent » jamais attribué)."
+        )
+
     # Infrastructures — dégradation gracieuse si service indisponible
     if location.coordinates:
         try:
-            infrastructures = await fetch_infrastructures(location.coordinates, req.radius_m)
+            infrastructures = await fetch_infrastructures(location.coordinates, req.radius_m, req.activity)
         except Exception:
             infrastructures = []
             warnings.append("Service Overpass indisponible — infrastructures non récupérées.")
@@ -113,7 +119,7 @@ async def map_data(req: AnalyzeRequest):
 
     infrastructures = []
     if location.coordinates:
-        infrastructures = await fetch_infrastructures(location.coordinates, req.radius_m)
+        infrastructures = await fetch_infrastructures(location.coordinates, req.radius_m, req.activity)
 
     features = []
     if location.coordinates:
@@ -137,6 +143,7 @@ async def map_data(req: AnalyzeRequest):
                 "name": infra.name,
                 "type": infra.type,
                 "category": infra.category,
+                "role": infra.role,
                 "source": infra.source,
                 "marker_type": "infrastructure",
                 "distance_m": infra.distance_m,

@@ -28,7 +28,7 @@ def _conf():
 def _infras():
     return [
         Infrastructure(name="Gare du Nord", type="station", category="transport"),
-        Infrastructure(name="Hôpital X", type="hospital", category="santé"),
+        Infrastructure(name="Hôpital X", type="hospital", category="sante"),
     ]
 
 

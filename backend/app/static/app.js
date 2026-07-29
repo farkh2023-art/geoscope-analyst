@@ -14,17 +14,28 @@ let selectedClickPoint = null; // {lat, lon} — persiste entre les cartes
 const HISTORY_KEY = 'geoscope_history';
 const MAX_HISTORY = 5;
 
-/* Couleurs par catégorie d'infrastructure */
+/* Couleurs par catégorie d'infrastructure (taxonomie commerce) */
 const CAT_COLORS = {
-  transport:      '#4f8ef7',
-  'santé':        '#f46060',
-  'éducation':    '#3ecf8e',
-  'énergie':      '#f59e42',
-  eau:            '#22d3ee',
-  industrie:      '#94a3b8',
-  administratif:  '#a78bfa',
-  environnement:  '#4ade80',
-  autre:          '#64748b',
+  commerce_alimentaire:      '#f59e42',
+  restauration:              '#f46060',
+  services_personne:         '#a78bfa',
+  commerce_non_alimentaire:  '#e879f9',
+  sante:                     '#3ecf8e',
+  education:                 '#4f8ef7',
+  transport:                 '#22d3ee',
+  bureaux:                   '#94a3b8',
+  loisirs_culture:           '#4ade80',
+  hebergement:               '#eab308',
+  stationnement:             '#64748b',
+  autre:                     '#94a3b8',
+};
+
+/* Couleurs par rôle (pertinence commerciale vis-à-vis de l'activité analysée) */
+const ROLE_COLORS = {
+  concurrent: '#f46060',
+  flux:       '#4f8ef7',
+  service:    '#4ade80',
+  autre:      '#64748b',
 };
 
 /* ── Health check au chargement ── */
@@ -50,6 +61,7 @@ const expected = `${selectedClickPoint.lat.toFixed(6)},${selectedClickPoint.lon.
 
   const radius_m = parseInt(document.getElementById('radiusField').value);
   const mode     = document.getElementById('modeField').value;
+  const activity = document.getElementById('activityField').value || null;
 
   setLoading(true);
   hideError();
@@ -59,7 +71,7 @@ const expected = `${selectedClickPoint.lat.toFixed(6)},${selectedClickPoint.lon.
     const resp = await fetch('/api/analyze', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ input, radius_m, mode }),
+      body: JSON.stringify({ input, radius_m, mode, activity }),
     });
     if (!resp.ok) {
       const err = await resp.json();
@@ -165,14 +177,21 @@ function renderMap(location, infrastructures, radius_m) {
 
     const tags = Object.entries(infra.osm_tags || {})
       .map(([k, v]) => `<span style="opacity:.7">${k}</span>: ${v}`).join('<br>');
-    const distance = infra.distance_m != null ? `${infra.distance_m} m` : 'distance inconnue';
+    const distance   = infra.distance_m != null ? `${infra.distance_m} m` : 'distance inconnue';
+    const isCompetit = infra.role === 'concurrent';
+    const roleColor  = ROLE_COLORS[infra.role] || ROLE_COLORS.autre;
 
     L.circleMarker([infra.lat, infra.lon], {
-      radius: 6, fillColor: color, color: '#fff', weight: 1.5, fillOpacity: 0.9,
+      radius: isCompetit ? 8 : 6,
+      fillColor: color,
+      color: isCompetit ? roleColor : '#fff',
+      weight: isCompetit ? 3 : 1.5,
+      fillOpacity: 0.9,
     })
       .bindPopup(`
         <strong>${infra.name}</strong><br>
         <span style="color:${color};font-weight:600">${cat}</span> · ${infra.type} · ${distance}<br>
+        <span style="color:${roleColor};font-weight:600">${infra.role}</span>
         ${tags ? `<br><small>${tags}</small>` : ''}
         <br><small style="opacity:.6">Source : ${infra.source}</small>
       `, { maxWidth: 220 })
@@ -344,7 +363,7 @@ function renderInfrastructures(infras) {
   content.innerHTML = `
     <table class="infra-table">
       <thead><tr>
-        <th>Nom</th><th>Type OSM</th><th>Catégorie</th>
+        <th>Nom</th><th>Type OSM</th><th>Catégorie</th><th>Rôle</th>
         <th class="sortable" onclick="sortInfraTable()">Distance ⇅</th>
         <th>Source</th>
       </tr></thead>
@@ -360,12 +379,14 @@ let _infraSortAsc  = true;
 
 function _renderInfraRows(infras) {
   const rows = infras.map(i => {
-    const color    = CAT_COLORS[i.category] || CAT_COLORS.autre;
-    const distance = i.distance_m != null ? `${i.distance_m} m` : 'position non cartographiée';
+    const color     = CAT_COLORS[i.category] || CAT_COLORS.autre;
+    const roleColor = ROLE_COLORS[i.role] || ROLE_COLORS.autre;
+    const distance  = i.distance_m != null ? `${i.distance_m} m` : 'position non cartographiée';
     return `<tr>
       <td>${i.name}</td>
       <td>${i.type}</td>
       <td><span class="cat-badge" style="color:${color};border-color:${color}">${i.category}</span></td>
+      <td><span class="cat-badge" style="color:${roleColor};border-color:${roleColor}">${i.role}</span></td>
       <td>${distance}</td>
       <td>${i.source}</td>
     </tr>`;
@@ -488,7 +509,7 @@ function exportGeoJSON() {
       type: 'Feature',
       geometry: { type: 'Point', coordinates: [infra.lon, infra.lat] },
       properties: {
-        name: infra.name, type: infra.type, category: infra.category,
+        name: infra.name, type: infra.type, category: infra.category, role: infra.role,
         source: infra.source, osm_tags: infra.osm_tags, distance_m: infra.distance_m,
       },
     });

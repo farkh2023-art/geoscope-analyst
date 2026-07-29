@@ -55,8 +55,8 @@ def generate_report(
         report["activites_economiques_probables"] = _infer_economy(grouped)
 
     if mode == AnalysisMode.full:
-        report["occupation_du_sol_estimee"] = _estimate_land_use(grouped, zone_type)
-        report["sensibilites_environnementales"] = _environmental_notes(grouped)
+        report["occupation_du_sol_estimee"] = _estimate_land_use(zone_type)
+        report["sensibilites_environnementales"] = _environmental_notes()
         report["contexte_territorial"] = _territorial_context(location, zone_type)
 
     return report
@@ -86,13 +86,9 @@ def _describe_zone(zone_type: str, categories: list[str]) -> str:
 
 
 def _infer_zone_type(grouped: dict) -> str:
-    if grouped.get("industrie"):
-        return "industrielle"
-    if grouped.get("transport") and grouped.get("administratif"):
+    if grouped.get("transport") and grouped.get("bureaux"):
         return "urbaine dense"
-    if grouped.get("environnement") and not grouped.get("transport"):
-        return "naturelle / rurale"
-    if grouped.get("santé") or grouped.get("éducation"):
+    if grouped.get("sante") or grouped.get("education"):
         return "urbaine résidentielle"
     return "mixte"
 
@@ -114,34 +110,29 @@ def _describe_connectivity(grouped: dict) -> str:
 
 def _infer_economy(grouped: dict) -> str:
     clues = []
-    if grouped.get("industrie"):
-        clues.append("activité industrielle et logistique")
-    if grouped.get("éducation"):
+    if grouped.get("bureaux"):
+        clues.append("activité tertiaire et services aux entreprises")
+    if grouped.get("education"):
         clues.append("services d'enseignement")
-    if grouped.get("santé"):
+    if grouped.get("sante"):
         clues.append("services de santé")
     if grouped.get("transport"):
         clues.append("économie liée aux flux et mobilités")
     return ", ".join(clues).capitalize() + "." if clues else "Activités économiques non déterminées avec les données disponibles."
 
 
-def _estimate_land_use(grouped: dict, zone_type: str) -> str:
-    if zone_type == "industrielle":
-        return "Majorité bâti industriel, zones logistiques, faible couverture végétale."
-    if zone_type == "naturelle / rurale":
-        return "Dominance végétation / agriculture, faible densité bâtie."
-    return "Usage mixte : résidentiel, tertiaire, espaces publics."
+def _estimate_land_use(zone_type: str) -> str:
+    if zone_type == "urbaine dense":
+        return "Concentration de commerces, bureaux et transports — usage majoritairement tertiaire."
+    if zone_type == "urbaine résidentielle":
+        return "Présence de services de santé et/ou d'éducation — usage majoritairement résidentiel."
+    return "Usage mixte : données insuffisantes pour trancher entre résidentiel, tertiaire et commercial."
 
 
-def _environmental_notes(grouped: dict) -> str:
-    notes = []
-    if grouped.get("eau"):
-        notes.append("Présence de cours d'eau ou zones humides — risques d'inondation possibles")
-    if grouped.get("environnement"):
-        notes.append("Espaces naturels protégés ou parcs identifiés")
-    if grouped.get("énergie"):
-        notes.append("Infrastructures énergétiques présentes — zones de sensibilité industrielle")
-    return "; ".join(notes) + "." if notes else "Aucune sensibilité environnementale majeure identifiée."
+def _environmental_notes() -> str:
+    # La taxonomie commerce (Étape 2) n'interroge plus les tags environnementaux
+    # (waterway, leisure=park, power) : aucune donnée de cette nature n'est collectée.
+    return "Aucune donnée environnementale collectée avec la taxonomie commerce actuelle."
 
 
 def _territorial_context(loc: LocationResult, zone_type: str) -> str:

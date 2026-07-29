@@ -1,5 +1,5 @@
 from app.models.schemas import Coordinates
-from app.services.overpass_client import _parse_elements, fetch_infrastructures
+from app.services.overpass_client import _infer_category, _parse_elements, fetch_infrastructures
 
 
 def test_node_way_and_missing_coords():
@@ -43,3 +43,25 @@ async def test_fetch_infrastructures_sorted_by_distance():
     distances = [i.distance_m for i in result]
     assert distances == sorted(distances)
     assert all(d <= 1500 for d in distances)
+
+
+def test_way_with_shop_bakery_is_commerce_alimentaire():
+    elements = [
+        {"type": "way", "center": {"lat": 48.8600, "lon": 2.3500}, "tags": {"shop": "bakery", "name": "Boulangerie Test"}},
+    ]
+
+    results = _parse_elements(elements)
+
+    assert len(results) == 1
+    assert results[0].category == "commerce_alimentaire"
+
+
+def test_unknown_tag_defaults_to_autre_without_exception():
+    category = _infer_category({"shop": "some_never_seen_shop_type"})
+    assert category == "commerce_non_alimentaire"
+
+    category = _infer_category({"amenity": "some_never_seen_amenity"})
+    assert category == "autre"
+
+    category = _infer_category({})
+    assert category == "autre"

@@ -60,6 +60,19 @@
             <option value="full">Dossier complet</option>
           </select>
         </div>
+        <div class="form-group">
+          <label for="activityField">Activité analysée</label>
+          <select id="activityField">
+            <option value="">Aucune — pas d'identification des concurrents</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="boulangerie">Boulangerie</option>
+            <option value="coiffure">Coiffure</option>
+            <option value="boutique">Boutique</option>
+            <option value="pharmacie">Pharmacie</option>
+            <option value="cabinet">Cabinet (libéral)</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
       </div>
       <button id="analyzeBtn" onclick="runAnalysis()">
         <span id="btnText">Analyser</span>

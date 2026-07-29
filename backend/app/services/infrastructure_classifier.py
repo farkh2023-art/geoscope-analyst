@@ -1,14 +1,17 @@
 from app.models.schemas import Infrastructure
 
 CATEGORIES = [
+    "commerce_alimentaire",
+    "restauration",
+    "services_personne",
+    "commerce_non_alimentaire",
+    "sante",
+    "education",
     "transport",
-    "santé",
-    "éducation",
-    "énergie",
-    "eau",
-    "industrie",
-    "administratif",
-    "environnement",
+    "bureaux",
+    "loisirs_culture",
+    "hebergement",
+    "stationnement",
     "autre",
 ]
 
